@@ -1,0 +1,25 @@
+# Images Folder
+
+Put all your product and company images in this folder.
+
+## Recommended Image Names
+```
+hero.jpg          ← Homepage background image (optional)
+about.jpg         ← About section company photo
+factory.jpg       ← Factory / workshop photo
+pump-casing.jpg   ← Product: pump casing
+impeller.jpg      ← Product: impeller
+valve-body.jpg    ← Product: valve body
+flange.jpg        ← Product: flange
+gearbox.jpg       ← Product: gearbox housing
+agri-parts.jpg    ← Product: agricultural parts
+custom-parts.jpg  ← Product: custom parts
+bearing-housing.jpg ← Product: bearing housing
+team.jpg          ← Company team photo (optional)
+```
+
+## Image Requirements
+- Format: JPG or PNG
+- Recommended size: 800×600px (product images), 1920×1080px (hero/about images)
+- Max file size: 500KB per image
+- Naming: lowercase with hyphens (e.g., `pump-casing.jpg`)
