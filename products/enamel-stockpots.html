@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frying Pans - CookerCool</title>
+    <title>Enamel Stock Pots - CookerCool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
@@ -45,9 +45,9 @@
 
     <div class="page-header">
         <div class="container">
-            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="cast-iron.html">Products</a> / <span>Frying Pans</span></div>
-            <h1>Frying Pans</h1>
-            <p>Pre-seasoned cast iron frying pans for perfect searing</p>
+            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="enamel-sets.html">Products</a> / <span>Enamel Stock Pots</span></div>
+            <h1>Enamel Stock Pots</h1>
+            <p>Durable enamel-coated cast iron stock pots in various sizes</p>
         </div>
     </div>
 
@@ -59,9 +59,9 @@
 
     <div class="cta-banner">
         <div class="container">
-            <h2>Get a Custom Quote</h2>
-            <p>Contact us for samples, pricing, and OEM options for frying pans.</p>
-            <a href="../contact.html" class="btn btn-white">Contact Us â†?/a>
+            <h2>Need Samples or Custom Sizes?</h2>
+            <p>Contact us for pricing, samples, and OEM customization options.</p>
+            <a href="../contact.html" class="btn btn-white">Get a Quote â†?/a>
         </div>
     </div>
 
@@ -70,12 +70,12 @@
 
     <script>
         const products = [
-            { sku: "SK-EP1-24", name: "Frying Pan 1", size: "24cm", weight: "2.00 kg" },
-            { sku: "SK-EP2-25", name: "Frying Pan 2", size: "25cm", weight: "2.11 kg" },
-            { sku: "SK-EP3-26", name: "Frying Pan 3", size: "26cm", weight: "2.26 kg" },
-            { sku: "SK-EP3-30", name: "Frying Pan 3", size: "30cm", weight: "3.13 kg" },
-            { sku: "SK-EP4-26", name: "Frying Pan 4", size: "26cm", weight: "2.50 kg" },
-            { sku: "SK-EP5", name: "Frying Pan 5", size: "26cm", weight: "2.45 kg" },
+            { sku: "EZ-ST-01", name: "Enamel Stock Pot", size: "20cm", weight: "~3kg" },
+            { sku: "EZ-ST-02", name: "Enamel Stock Pot", size: "22cm", weight: "~3.7kg" },
+            { sku: "EZ-ST-03", name: "Enamel Stock Pot", size: "24cm", weight: "~4.5kg" },
+            { sku: "EZ-ST-04", name: "Enamel Stock Pot", size: "26cm", weight: "~5kg" },
+            { sku: "EZ-ST-05", name: "Enamel Stock Pot", size: "28cm", weight: "~6kg" },
+            { sku: "EZ-ST-06", name: "Enamel Stock Pot", size: "30cm", weight: "~6.5kg" },
         ];
         document.getElementById('product-list').innerHTML = products.map(p => `<div class="product-item"><div class="product-item-img"><span class="emoji">&#9632;</span></div><div class="product-item-body"><div class="product-item-title">${p.name}</div><div class="product-item-sku">${p.sku}</div><div class="product-item-sizes">Size: ${p.size} Â· ${p.weight}</div></div></div>`).join('');
         window.addEventListener('scroll', () => document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50));

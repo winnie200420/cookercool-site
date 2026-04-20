@@ -141,10 +141,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     transition: var(--transition);
 }
 .dropdown-link:hover { color: var(--primary); background: rgba(225,107,50,0.05); }
-.dropdown-link .arrow {
-    display: inline-block; width: 0; height: 0;
+/* Arrow for dropdown link - CSS only, no text needed */
+.dropdown-link::after {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
     border-top: 4px solid transparent; border-bottom: 4px solid transparent;
-    border-left: 4px solid currentColor; font-size: 8px;
+    border-left: 4px solid var(--text-light);
 }
 
 /* Sub-dropdown (level 3) */
@@ -163,10 +166,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     opacity: 1; visibility: visible; transform: translateX(0);
 }
 .sub-dropdown-link {
-    display: block; padding: 10px 20px; font-size: 14px; color: var(--text-body);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 20px; font-size: 14px; color: var(--text-body);
     transition: var(--transition);
 }
 .sub-dropdown-link:hover { color: var(--primary); background: rgba(225,107,50,0.05); }
+/* Arrow for sub-dropdown - CSS only */
+.sub-dropdown-link::after {
+    content: '';
+    display: inline-block;
+    width: 0; height: 0;
+    border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+    border-left: 4px solid var(--text-light);
+}
 
 /* Header actions */
 .header-actions { display: flex; align-items: center; gap: 10px; }
@@ -264,7 +276,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     align-items: center; justify-content: center;
     position: relative; overflow: hidden;
 }
-.product-img .emoji { font-size: 56px; }
+.product-img .emoji { font-size: 40px; color: var(--border); font-family: serif; }
 .product-tag {
     position: absolute; top: 10px; left: 10px;
     background: var(--primary); color: #fff;
