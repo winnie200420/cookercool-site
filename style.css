@@ -94,6 +94,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo-img { height: 42px; width: auto; }
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
 
 /* Main Nav */
 .main-nav { flex: 1; display: flex; justify-content: center; }
@@ -453,6 +460,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .footer-logo { display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 20px; color: #fff; margin-bottom: 14px; text-decoration: none; }
 .footer-logo-img { height: 36px; width: auto; }
+.footer-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+}
 .footer-desc { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.4); margin-top: 14px; }
 .footer-links h4, .footer-products h4, .footer-contact h4 { font-size: 13px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
 .footer-links ul, .footer-products ul { display: flex; flex-direction: column; gap: 10px; }
