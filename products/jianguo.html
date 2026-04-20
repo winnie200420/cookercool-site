@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frying Pans (煎锅) - CookerCool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo"><span class="logo-icon">🍳</span><span class="logo-text">CookerCool</span></a>
+            <nav class="main-nav"><ul class="nav-list" id="nav-list">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" class="nav-link active">Products <span class="arrow">▼</span></a>
+                    <div class="dropdown">
+                        <div class="dropdown-item"><a href="cast-iron.html" class="dropdown-link">🩵 Cast Iron <span class="arrow">▶</span></a>
+                            <div class="sub-dropdown">
+                                <a href="tangguo.html" class="sub-dropdown-link">🍲 Stock Pots</a>
+                                <a href="jianguo.html" class="sub-dropdown-link">🍳 Frying Pans</a>
+                                <a href="helan.html" class="sub-dropdown-link">🫕 Dutch Ovens</a>
+                                <a href="niupai.html" class="sub-dropdown-link">🥩 Grill Pans</a>
+                                <a href="naiguo.html" class="sub-dropdown-link">🥄 Milk Pots & Woks</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-item"><a href="enamel-sets.html" class="dropdown-link">🩷 Enamel Sets</a></div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../contact.html" class="nav-link">Contact</a></li>
+            </ul></nav>
+            <div class="header-actions">
+                <button class="lang-switch" id="lang-switch">EN / 中文</button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="cast-iron.html">Products</a> / <span>Frying Pans</span></div>
+            <h1>🍳 Frying Pans</h1>
+            <p>煎锅系列 — Pre-seasoned cast iron frying pans for perfect searing</p>
+        </div>
+    </div>
+
+    <section class="section product-list-section">
+        <div class="container">
+            <div class="products-row" id="product-list"></div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <div class="container">
+            <h2>Get a Custom Quote</h2>
+            <p>Contact us for samples, pricing, and OEM options for frying pans.</p>
+            <a href="../contact.html" class="btn btn-white">Contact Us →</a>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span>🍳</span> CookerCool</div><p class="footer-desc">Professional manufacturer of cast iron and enamel cookware.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="cast-iron.html">Cast Iron</a></li><li><a href="enamel-sets.html">Enamel Sets</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-products"><h4>Products</h4><ul><li><a href="tangguo.html">Stock Pots</a></li><li><a href="jianguo.html">Frying Pans</a></li><li><a href="helan.html">Dutch Ovens</a></li><li><a href="enamel-sets.html">Enamel Sets</a></li></ul></div><div class="footer-contact"><h4>Contact</h4><p>📧 alicemeng@cookercool.com</p><p>📞 +86 18722347352</p></div></div><div class="footer-bottom"><p>© 2026 Tianjin New Trend Import & Export Co., Ltd. All Rights Reserved.</p></div></div></footer>
+    <a href="../contact.html" class="fixed-cta">Get a Quote</a>
+
+    <script>
+        const products = [
+            { sku: "SK-EP1-24", name_en: "Frying Pan 1", name_zh: "煎锅1", size: "24cm", weight: "2.00 kg" },
+            { sku: "SK-EP2-25", name_en: "Frying Pan 2", name_zh: "煎锅2", size: "25cm", weight: "2.11 kg" },
+            { sku: "SK-EP3-26", name_en: "Frying Pan 3", name_zh: "煎锅3", size: "26cm", weight: "2.26 kg" },
+            { sku: "SK-EP3-30", name_en: "Frying Pan 3", name_zh: "煎锅3", size: "30cm", weight: "3.13 kg" },
+            { sku: "SK-EP4-26", name_en: "Frying Pan 4", name_zh: "煎锅4", size: "26cm", weight: "2.50 kg" },
+            { sku: "SK-EP5", name_en: "Frying Pan 5", name_zh: "煎锅5", size: "26cm", weight: "2.45 kg" },
+        ];
+        document.getElementById('product-list').innerHTML = products.map(p => `
+            <div class="product-item">
+                <div class="product-item-img"><span class="emoji">🍳</span></div>
+                <div class="product-item-body">
+                    <div class="product-item-title">${p.name_zh}</div>
+                    <div class="product-item-title-zh">${p.name_en}</div>
+                    <div class="product-item-sku">${p.sku}</div>
+                    <div class="product-item-sizes">Size: ${p.size} · ${p.weight}</div>
+                </div>
+            </div>`).join('');
+        let lang = localStorage.getItem('cc-lang') || 'en';
+        document.getElementById('lang-switch').textContent = lang === 'en' ? '中文 / EN' : 'EN / 中文';
+        document.getElementById('lang-switch').addEventListener('click', () => { localStorage.setItem('cc-lang', lang==='en'?'zh':'en'); location.reload(); });
+        window.addEventListener('scroll', () => document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50));
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => document.getElementById('nav-list').classList.toggle('open'));
+        window.addEventListener('scroll', () => { const c=document.querySelector('.fixed-cta'); if(c) c.style.display=window.scrollY>600?'block':'none'; });
+    </script>
+</body>
+</html>
