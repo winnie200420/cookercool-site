@@ -11,7 +11,7 @@ const featuredProducts = [
     { title_en: "Cast Iron Wok", sku: "SK-EW1-36", size: "36cm", tag: "", cat: "cast-iron" },
     { title_en: "Cast Iron Milk Pot", sku: "SK-EM1-19", size: "19cm", tag: "", cat: "cast-iron" },
     { title_en: "Enamel 3-Piece Set", sku: "EZ3-3", size: "3-Piece", tag: "Best Seller", cat: "enamel-sets" },
-    { title_en: "Enamel Dutch Oven Set", sku: "EZ12-4", size: "4-Piece", tag: "Popular", cat: "enamel-sets" },
+    { title_en: "Enamel 4-Piece Set", sku: "EZ12-4", size: "4-Piece", tag: "Popular", cat: "enamel-sets" },
 ];
 
 // ----- Featured Products -----
@@ -24,7 +24,7 @@ function renderFeaturedProducts() {
         return `
             <div class="product-card">
                 <div class="product-img">
-                    <span class="emoji">${p.cat === 'enamel-sets' ? '🩷' : '🍲'}</span>
+                    <span class="emoji">&#9632;</span>
                     ${tagHtml}
                 </div>
                 <div class="product-body">
@@ -39,16 +39,20 @@ function renderFeaturedProducts() {
 
 // ----- Header Scroll -----
 const header = document.getElementById('site-header');
-window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
-});
+if (header) {
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+}
 
 // ----- Mobile Menu -----
 const mobileBtn = document.getElementById('mobile-menu-btn');
 const navList = document.getElementById('nav-list');
-mobileBtn.addEventListener('click', () => {
-    navList.classList.toggle('open');
-});
+if (mobileBtn && navList) {
+    mobileBtn.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
+}
 
 // ----- Fixed CTA -----
 const fixedCta = document.getElementById('fixed-cta');
@@ -68,7 +72,7 @@ if (form) {
         btn.textContent = 'Sending...';
         btn.disabled = true;
         setTimeout(() => {
-            btn.textContent = 'Sent ✓';
+            btn.textContent = 'Sent';
             btn.style.background = '#27ae60';
             form.reset();
             setTimeout(() => {
