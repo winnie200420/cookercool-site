@@ -87,17 +87,18 @@
 
     <script>
 
-        var SQUARE = "\u25A0";
+        var SQUARE = "\\u25A0";
         function render(items, id) {
             var el = document.getElementById(id);
             if (!el) return;
             var html = "";
             for (var i = 0; i < items.length; i++) {
                 var p = items[i];
-                var imgHtml = p.image
-                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                var hasImg = !!p.image;
+                var imgHtml = hasImg
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\\'none\\'; this.nextElementSibling.style.display=\\'inline\\';">'
                     : '';
-                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                var fallback = '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -111,10 +112,11 @@
             var html = "";
             for (var i = 0; i < items.length; i++) {
                 var p = items[i];
-                var imgHtml = p.image
-                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                var hasImg = !!p.image;
+                var imgHtml = hasImg
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\\'none\\'; this.nextElementSibling.style.display=\\'inline\\';">'
                     : '';
-                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                var fallback = '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -122,40 +124,17 @@
             el.innerHTML = html;
         }
 
-        var stockPots = [
-            { name: "Enamel Stock Pot", sizes: "20cm" },
-            { name: "Enamel Stock Pot", sizes: "22cm" },
-            { name: "Enamel Stock Pot", sizes: "24cm" },
-            { name: "Enamel Stock Pot", sizes: "26cm" },
-            { name: "Enamel Stock Pot", sizes: "28cm" },
-            { name: "Enamel Stock Pot", sizes: "30cm" },
-        ];
-        var skillets = [
-            { name: "Enamel Frying Pan", sizes: "26cm" },
-            { name: "Enamel Frying Pan", sizes: "28cm" },
-            { name: "Enamel Grill Pan", sizes: "26cm" },
-            { name: "Enamel Griddle", sizes: "33x23cm" },
-        ];
-        var sets = [
-            { name: "3-Piece Enamel Set", sizes: "Customizable", image: "3-piece-enamel-cookware-set.jpg" },
-            { name: "3-Piece Black Enamel Set", sizes: "Customizable", image: "3-piece-black-enamel-set.jpg" },
-            { name: "3-Piece Red Enamel Set", sizes: "Customizable", image: "3-piece-red-enamel-set.jpg" },
-            { name: "3-Piece White Enamel Set", sizes: "Customizable", image: "3-piece-white-enamel-set.jpg" },
-            { name: "4-Piece Gray Enamel Set", sizes: "Customizable", image: "4-piece-gray-enamel-set.jpg" },
-            { name: "5-Piece Enamel Cookware Set", sizes: "Customizable", image: "5-piece-enamel-cookware-set.jpg" },
-            { name: "5-Piece Lake Blue Enamel Set", sizes: "Customizable", image: "5-piece-lake-blue-enamel-set.jpg" },
-            { name: "5-Piece Red Enamel Set", sizes: "Customizable", image: "5-piece-red-enamel-set.jpg" },
-            { name: "5-Piece Sapphire Blue Enamel Set", sizes: "Customizable", image: "5-piece-sapphire-blue-enamel-set.jpg" },
-            { name: "5-Piece White Enamel Set", sizes: "Customizable", image: "5-piece-white-enamel-set.jpg" },
-            { name: "7-Piece Enamel Cookware Set", sizes: "Customizable", image: "7-piece-enamel-cookware-set.jpg" },
-        ];
+        var stockPots = [{'name': 'Enamel Stock Pot', 'sizes': '20cm'}, {'name': 'Enamel Stock Pot', 'sizes': '22cm'}, {'name': 'Enamel Stock Pot', 'sizes': '24cm'}, {'name': 'Enamel Stock Pot', 'sizes': '26cm'}, {'name': 'Enamel Stock Pot', 'sizes': '28cm'}, {'name': 'Enamel Stock Pot', 'sizes': '30cm'}];
+        var skillets = [{'name': 'Enamel Frying Pan', 'sizes': '26cm'}, {'name': 'Enamel Frying Pan', 'sizes': '28cm'}, {'name': 'Enamel Grill Pan', 'sizes': '26cm'}, {'name': 'Enamel Griddle', 'sizes': '33x23cm'}];
+        var sets = [{'name': '3-Piece Enamel Set', 'sizes': 'Customizable', 'image': '3-piece-enamel-cookware-set.jpg'}, {'name': '3-Piece Black Enamel Set', 'sizes': 'Customizable', 'image': '3-piece-black-enamel-set.jpg'}, {'name': '3-Piece Red Enamel Set', 'sizes': 'Customizable', 'image': '3-piece-red-enamel-set.jpg'}, {'name': '3-Piece White Enamel Set', 'sizes': 'Customizable', 'image': '3-piece-white-enamel-set.jpg'}, {'name': '4-Piece Gray Enamel Set', 'sizes': 'Customizable', 'image': '4-piece-gray-enamel-set.jpg'}, {'name': '5-Piece Enamel Cookware Set', 'sizes': 'Customizable', 'image': '5-piece-enamel-cookware-set.jpg'}, {'name': '5-Piece Lake Blue Enamel Set', 'sizes': 'Customizable', 'image': '5-piece-lake-blue-enamel-set.jpg'}, {'name': '5-Piece Red Enamel Set', 'sizes': 'Customizable', 'image': '5-piece-red-enamel-set.jpg'}, {'name': '5-Piece Sapphire Blue Enamel Set', 'sizes': 'Customizable', 'image': '5-piece-sapphire-blue-enamel-set.jpg'}, {'name': '5-Piece White Enamel Set', 'sizes': 'Customizable', 'image': '5-piece-white-enamel-set.jpg'}, {'name': '7-Piece Enamel Cookware Set', 'sizes': 'Customizable', 'image': '7-piece-enamel-cookware-set.jpg'}];
 
         render(stockPots, 'stock-pot-items');
         render(skillets, 'skillet-items');
         render(sets, 'set-items');
-
-
+    
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
+
         </script>
+

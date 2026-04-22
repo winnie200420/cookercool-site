@@ -132,17 +132,18 @@
 
     <script>
 
-        var SQUARE = "\u25A0";
+        var SQUARE = "\\u25A0";
         function render(items, id) {
             var el = document.getElementById(id);
             if (!el) return;
             var html = "";
             for (var i = 0; i < items.length; i++) {
                 var p = items[i];
-                var imgHtml = p.image
-                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                var hasImg = !!p.image;
+                var imgHtml = hasImg
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\\'none\\'; this.nextElementSibling.style.display=\\'inline\\';">'
                     : '';
-                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                var fallback = '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -156,10 +157,11 @@
             var html = "";
             for (var i = 0; i < items.length; i++) {
                 var p = items[i];
-                var imgHtml = p.image
-                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                var hasImg = !!p.image;
+                var imgHtml = hasImg
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\\'none\\'; this.nextElementSibling.style.display=\\'inline\\';">'
                     : '';
-                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                var fallback = '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -167,53 +169,12 @@
             el.innerHTML = html;
         }
 
-        var stockPots = [
-            { name: "Stock Pot 1", sizes: "20cm" },
-            { name: "Stock Pot 1", sizes: "26cm" },
-            { name: "Stock Pot 2", sizes: "22cm" },
-            { name: "Stock Pot 2", sizes: "24cm" },
-            { name: "Stock Pot 2", sizes: "28cm" },
-            { name: "Stock Pot 3", sizes: "20cm" },
-            { name: "Stock Pot 4", sizes: "22cm" },
-            { name: "Stock Pot 4", sizes: "24cm" },
-            { name: "Stock Pot 5", sizes: "24cm" },
-            { name: "Oval Stock Pot", sizes: "30x24cm" },
-        ];
-        var shallowPots = [
-            { name: "Shallow Pot 1", sizes: "26cm" },
-            { name: "Shallow Pot 2", sizes: "30cm" },
-            { name: "Shallow Pot 3", sizes: "32cm" },
-        ];
-        var dutchOvens = [
-            { name: "Dutch Oven", sizes: "26cm" },
-            { name: "26cm Pre-Seasoned Long Handle Dutch Oven", sizes: "26cm", image: "26cm-pre-seasoned-long-handle-dutch-oven.jpg" },
-            { name: "Pre-Seasoned Dutch Oven A", sizes: "Customizable", image: "pre-seasoned-dutch-oven-a.jpg" },
-            { name: "Pre-Seasoned Dutch Oven B", sizes: "Customizable", image: "pre-seasoned-dutch-oven-b.jpg" },
-            { name: "Potjie African Pot", sizes: "Customizable", image: "potjie-african-pot.jpg" },
-        ];
-        var fryingPans = [
-            { name: "Frying Pan 1", sizes: "24cm" },
-            { name: "Frying Pan 2", sizes: "25cm" },
-            { name: "Frying Pan 3", sizes: "26cm" },
-            { name: "Frying Pan 3", sizes: "30cm" },
-            { name: "Frying Pan 4", sizes: "26cm" },
-            { name: "Frying Pan 5", sizes: "26cm" },
-            { name: "Classic Pre-Seasoned Fry Pan 26cm", sizes: "26cm", image: "classic-pre-seasoned-fry-pan-26cm.jpg" },
-        ];
-        var grillPans = [
-            { name: "Grill Pan 1", sizes: "26cm" },
-            { name: "Grill Pan 1", sizes: "28cm" },
-            { name: "Grill Pan 2", sizes: "24cm" },
-            { name: "Grill Pan 3", sizes: "25cm" },
-            { name: "Griddle", sizes: "33x23cm" },
-            { name: "Grill Pan A - 35cm", sizes: "35cm", image: "grill-pan-a-35cm.jpg" },
-            { name: "Grill Pan B", sizes: "Customizable", image: "grill-pan-b.png" },
-        ];
-        var milkWoks = [
-            { name: "Milk Pot", sizes: "19cm" },
-            { name: "Wok", sizes: "36cm" },
-            { name: "Camping Cookware Set", sizes: "Customizable", image: "camping-cookware-set.jpg" },
-        ];
+        var stockPots = [{'name': 'Stock Pot 1', 'sizes': '20cm'}, {'name': 'Stock Pot 1', 'sizes': '26cm'}, {'name': 'Stock Pot 2', 'sizes': '22cm'}, {'name': 'Stock Pot 2', 'sizes': '24cm'}, {'name': 'Stock Pot 2', 'sizes': '28cm'}, {'name': 'Stock Pot 3', 'sizes': '20cm'}, {'name': 'Stock Pot 4', 'sizes': '22cm'}, {'name': 'Stock Pot 4', 'sizes': '24cm'}, {'name': 'Stock Pot 5', 'sizes': '24cm'}, {'name': 'Oval Stock Pot', 'sizes': '30x24cm'}];
+        var shallowPots = [{'name': 'Shallow Pot 1', 'sizes': '26cm'}, {'name': 'Shallow Pot 2', 'sizes': '30cm'}, {'name': 'Shallow Pot 3', 'sizes': '32cm'}];
+        var dutchOvens = [{'name': 'Dutch Oven', 'sizes': '26cm'}, {'name': '26cm Pre-Seasoned Long Handle Dutch Oven', 'sizes': '26cm', 'image': '26cm-pre-seasoned-long-handle-dutch-oven.jpg'}, {'name': 'Pre-Seasoned Dutch Oven A', 'sizes': 'Customizable', 'image': 'pre-seasoned-dutch-oven-a.jpg'}, {'name': 'Pre-Seasoned Dutch Oven B', 'sizes': 'Customizable', 'image': 'pre-seasoned-dutch-oven-b.jpg'}, {'name': 'Potjie African Pot', 'sizes': 'Customizable', 'image': 'potjie-african-pot.jpg'}];
+        var fryingPans = [{'name': 'Frying Pan 1', 'sizes': '24cm'}, {'name': 'Frying Pan 2', 'sizes': '25cm'}, {'name': 'Frying Pan 3', 'sizes': '26cm'}, {'name': 'Frying Pan 3', 'sizes': '30cm'}, {'name': 'Frying Pan 4', 'sizes': '26cm'}, {'name': 'Frying Pan 5', 'sizes': '26cm'}, {'name': 'Classic Pre-Seasoned Fry Pan 26cm', 'sizes': '26cm', 'image': 'classic-pre-seasoned-fry-pan-26cm.jpg'}];
+        var grillPans = [{'name': 'Grill Pan 1', 'sizes': '26cm'}, {'name': 'Grill Pan 1', 'sizes': '28cm'}, {'name': 'Grill Pan 2', 'sizes': '24cm'}, {'name': 'Grill Pan 3', 'sizes': '25cm'}, {'name': 'Griddle', 'sizes': '33x23cm'}, {'name': 'Grill Pan A - 35cm', 'sizes': '35cm', 'image': 'grill-pan-a-35cm.jpg'}, {'name': 'Grill Pan B', 'sizes': 'Customizable', 'image': 'grill-pan-b.png'}];
+        var milkWoks = [{'name': 'Milk Pot', 'sizes': '19cm'}, {'name': 'Wok', 'sizes': '36cm'}, {'name': 'Camping Cookware Set', 'sizes': 'Customizable', 'image': 'camping-cookware-set.jpg'}];
 
         render(stockPots, 'stock-pot-items');
         render(shallowPots, 'shallow-pot-items');
@@ -221,9 +182,10 @@
         render(fryingPans, 'frying-pan-items');
         render(grillPans, 'grill-pan-items');
         render(milkWoks, 'milk-wok-items');
-
-
+    
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
+
         </script>
+
