@@ -71,22 +71,35 @@
 
     <script>
         var products = [
-            { sku: "SK-EP1-24", name: "Frying Pan 1", size: "24cm", weight: "2.00 kg" },
-            { sku: "SK-EP2-25", name: "Frying Pan 2", size: "25cm", weight: "2.11 kg" },
-            { sku: "SK-EP3-26", name: "Frying Pan 3", size: "26cm", weight: "2.26 kg" },
-            { sku: "SK-EP3-30", name: "Frying Pan 3", size: "30cm", weight: "3.13 kg" },
-            { sku: "SK-EP4-26", name: "Frying Pan 4", size: "26cm", weight: "2.50 kg" },
-            { sku: "SK-EP5", name: "Frying Pan 5", size: "26cm", weight: "2.45 kg" },
+            { name: "Frying Pan 1", sizes: "24cm" },
+            { name: "Frying Pan 2", sizes: "25cm" },
+            { name: "Frying Pan 3", sizes: "26cm" },
+            { name: "Frying Pan 3", sizes: "30cm" },
+            { name: "Frying Pan 4", sizes: "26cm" },
+            { name: "Frying Pan 5", sizes: "26cm" },
+            { name: "Classic Pre-Seasoned Fry Pan 26cm", sizes: "26cm", image: "classic-pre-seasoned-fry-pan-26cm.jpg" },
         ];
-        var html = "";
-        for (var i = 0; i < products.length; i++) {
-            var p = products[i];
-            html += '<div class="product-item"><div class="product-item-img"><span class="emoji">' + SQUARE + '</span></div><div class="product-item-body"><div class="product-item-title">' + p.name + '</div><div class="product-item-sku">' + p.sku + '</div><div class="product-item-sizes">Size: ' + p.size + ' \u00b7 ' + p.weight + '</div></div></div>';
+        var SQUARE = "\u25A0";
+        function renderProducts(items, id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            var html = "";
+            for (var i = 0; i < items.length; i++) {
+                var p = items[i];
+                var imgHtml = p.image
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                    : '';
+                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
+                if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
+                html += '</div></div>';
+            }
+            el.innerHTML = html;
         }
-        document.getElementById('product-list').innerHTML = html;    var SQUARE = "\u25A0";
-    window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
-    window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-    </script>
+        renderProducts(products, 'product-list');
+        window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
+        window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
+        </script>
 </body>
 </html>

@@ -131,6 +131,7 @@
     <a href="../contact.html" class="fixed-cta">Get a Quote</a>
 
     <script>
+
         var SQUARE = "\u25A0";
         function render(items, id) {
             var el = document.getElementById(id);
@@ -138,49 +139,80 @@
             var html = "";
             for (var i = 0; i < items.length; i++) {
                 var p = items[i];
-                html += '<div class="product-item"><div class="product-item-img"><span class="emoji">' + SQUARE + '</span></div><div class="product-item-body"><div class="product-item-title">' + p.name + '</div><div class="product-item-sku">' + p.sku + '</div><div class="product-item-sizes">Size: ' + p.size + ' \u00b7 ' + p.weight + '</div></div></div>';
+                var imgHtml = p.image
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                    : '';
+                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
+                if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
+                html += '</div></div>';
+            }
+            el.innerHTML = html;
+        }
+
+        function renderSimple(items, id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            var html = "";
+            for (var i = 0; i < items.length; i++) {
+                var p = items[i];
+                var imgHtml = p.image
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                    : '';
+                var fallback = '<span class="emoji" style="display:none;">' + SQUARE + '</span>';
+                html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
+                if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
+                html += '</div></div>';
             }
             el.innerHTML = html;
         }
 
         var stockPots = [
-            { sku: "SK-EC1-20", name: "Stock Pot 1", size: "20cm", weight: "3.07 kg" },
-            { sku: "SK-EC1-26", name: "Stock Pot 1", size: "26cm", weight: "5.49 kg" },
-            { sku: "SK-EC2-22", name: "Stock Pot 2", size: "22cm", weight: "3.75 kg" },
-            { sku: "SK-EC2-24", name: "Stock Pot 2", size: "24cm", weight: "4.85 kg" },
-            { sku: "SK-EC2-28", name: "Stock Pot 2", size: "28cm", weight: "6.30 kg" },
-            { sku: "SK-EC3-20", name: "Stock Pot 3", size: "20cm", weight: "3.16 kg" },
-            { sku: "SK-EC4-22", name: "Stock Pot 4", size: "22cm", weight: "4.06 kg" },
-            { sku: "SK-EC4-24", name: "Stock Pot 4", size: "24cm", weight: "4.94 kg" },
-            { sku: "SK-EC5-24", name: "Stock Pot 5", size: "24cm", weight: "4.63 kg" },
-            { sku: "SK-EO1-30", name: "Oval Stock Pot", size: "30x24cm", weight: "5.50 kg" },
+            { name: "Stock Pot 1", sizes: "20cm" },
+            { name: "Stock Pot 1", sizes: "26cm" },
+            { name: "Stock Pot 2", sizes: "22cm" },
+            { name: "Stock Pot 2", sizes: "24cm" },
+            { name: "Stock Pot 2", sizes: "28cm" },
+            { name: "Stock Pot 3", sizes: "20cm" },
+            { name: "Stock Pot 4", sizes: "22cm" },
+            { name: "Stock Pot 4", sizes: "24cm" },
+            { name: "Stock Pot 5", sizes: "24cm" },
+            { name: "Oval Stock Pot", sizes: "30x24cm" },
         ];
         var shallowPots = [
-            { sku: "SK-ES1-26", name: "Shallow Pot 1", size: "26cm", weight: "4.21 kg" },
-            { sku: "SK-ES2-30", name: "Shallow Pot 2", size: "30cm", weight: "5.60 kg" },
-            { sku: "SK-ES3-32", name: "Shallow Pot 3", size: "32cm", weight: "7.00 kg" },
+            { name: "Shallow Pot 1", sizes: "26cm" },
+            { name: "Shallow Pot 2", sizes: "30cm" },
+            { name: "Shallow Pot 3", sizes: "32cm" },
         ];
         var dutchOvens = [
-            { sku: "SK-ED1-26", name: "Dutch Oven", size: "26cm", weight: "6.40 kg" },
+            { name: "Dutch Oven", sizes: "26cm" },
+            { name: "26cm Pre-Seasoned Long Handle Dutch Oven", sizes: "26cm", image: "26cm-pre-seasoned-long-handle-dutch-oven.jpg" },
+            { name: "Pre-Seasoned Dutch Oven A", sizes: "Customizable", image: "pre-seasoned-dutch-oven-a.jpg" },
+            { name: "Pre-Seasoned Dutch Oven B", sizes: "Customizable", image: "pre-seasoned-dutch-oven-b.jpg" },
+            { name: "Potjie African Pot", sizes: "Customizable", image: "potjie-african-pot.jpg" },
         ];
         var fryingPans = [
-            { sku: "SK-EP1-24", name: "Frying Pan 1", size: "24cm", weight: "2.00 kg" },
-            { sku: "SK-EP2-25", name: "Frying Pan 2", size: "25cm", weight: "2.11 kg" },
-            { sku: "SK-EP3-26", name: "Frying Pan 3", size: "26cm", weight: "2.26 kg" },
-            { sku: "SK-EP3-30", name: "Frying Pan 3", size: "30cm", weight: "3.13 kg" },
-            { sku: "SK-EP4-26", name: "Frying Pan 4", size: "26cm", weight: "2.50 kg" },
-            { sku: "SK-EP5", name: "Frying Pan 5", size: "26cm", weight: "2.45 kg" },
+            { name: "Frying Pan 1", sizes: "24cm" },
+            { name: "Frying Pan 2", sizes: "25cm" },
+            { name: "Frying Pan 3", sizes: "26cm" },
+            { name: "Frying Pan 3", sizes: "30cm" },
+            { name: "Frying Pan 4", sizes: "26cm" },
+            { name: "Frying Pan 5", sizes: "26cm" },
+            { name: "Classic Pre-Seasoned Fry Pan 26cm", sizes: "26cm", image: "classic-pre-seasoned-fry-pan-26cm.jpg" },
         ];
         var grillPans = [
-            { sku: "SK-EG1-26", name: "Grill Pan 1", size: "26cm", weight: "2.60 kg" },
-            { sku: "SK-EG1-28", name: "Grill Pan 1", size: "28cm", weight: "2.96 kg" },
-            { sku: "SK-EG2-24", name: "Grill Pan 2", size: "24cm", weight: "1.95 kg" },
-            { sku: "SK-EG3-25", name: "Grill Pan 3", size: "25cm", weight: "2.00 kg" },
-            { sku: "SK-EB1-33", name: "Griddle", size: "33x23cm", weight: "3.70 kg" },
+            { name: "Grill Pan 1", sizes: "26cm" },
+            { name: "Grill Pan 1", sizes: "28cm" },
+            { name: "Grill Pan 2", sizes: "24cm" },
+            { name: "Grill Pan 3", sizes: "25cm" },
+            { name: "Griddle", sizes: "33x23cm" },
+            { name: "Grill Pan A - 35cm", sizes: "35cm", image: "grill-pan-a-35cm.jpg" },
+            { name: "Grill Pan B", sizes: "Customizable", image: "grill-pan-b.png" },
         ];
         var milkWoks = [
-            { sku: "SK-EM1-19", name: "Milk Pot", size: "19cm", weight: "3.19 kg" },
-            { sku: "SK-EW1-36", name: "Wok", size: "36cm", weight: "4.50 kg" },
+            { name: "Milk Pot", sizes: "19cm" },
+            { name: "Wok", sizes: "36cm" },
+            { name: "Camping Cookware Set", sizes: "Customizable", image: "camping-cookware-set.jpg" },
         ];
 
         render(stockPots, 'stock-pot-items');
@@ -190,9 +222,8 @@
         render(grillPans, 'grill-pan-items');
         render(milkWoks, 'milk-wok-items');
 
+
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-    </script>
-</body>
-</html>
+        </script>

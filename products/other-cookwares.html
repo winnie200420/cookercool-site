@@ -71,21 +71,28 @@
 
     <script>
         var products = [
-            { sku: "OC-CS1-W", name: "Carbon Steel Wok", size: "30cm", weight: "1.8 kg" },
-            { sku: "OC-CS2-W", name: "Carbon Steel Wok", size: "35cm", weight: "2.2 kg" },
-            { sku: "OC-SS1-F", name: "Stainless Steel Frying Pan", size: "24cm", weight: "1.2 kg" },
-            { sku: "OC-SS2-F", name: "Stainless Steel Frying Pan", size: "28cm", weight: "1.6 kg" },
+            { name: "Carbon Steel Wok", sizes: "30cm" },
+            { name: "Carbon Steel Wok", sizes: "35cm" },
+            { name: "Stainless Steel Frying Pan", sizes: "24cm" },
+            { name: "Stainless Steel Frying Pan", sizes: "28cm" },
         ];
-        var html = "";
-        for (var i = 0; i < products.length; i++) {
-            var p = products[i];
-            html += '<div class="product-item"><div class="product-item-img"><span class="emoji">' + SQUARE + '</span></div><div class="product-item-body"><div class="product-item-title">' + p.name + '</div><div class="product-item-sku">' + p.sku + '</div><div class="product-item-sizes">Size: ' + p.size + ' &middot; ' + p.weight + '</div></div></div>';
-        }
-        document.getElementById('product-list').innerHTML = html;
         var SQUARE = "\u25A0";
+        function renderProducts(items, id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            var html = "";
+            for (var i = 0; i < items.length; i++) {
+                var p = items[i];
+                html += '<div class="product-item"><div class="product-item-img"><span class="emoji">' + SQUARE + '</span></div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
+                if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
+                html += '</div></div>';
+            }
+            el.innerHTML = html;
+        }
+        renderProducts(products, 'product-list');
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-    </script>
+        </script>
 </body>
 </html>
