@@ -70,7 +70,6 @@
     <a href="../contact.html" class="fixed-cta">Get a Quote</a>
 
     <script>
-
         var products = [{'name': 'Stock Pot 1', 'sizes': '20cm'}, {'name': 'Stock Pot 1', 'sizes': '26cm'}, {'name': 'Stock Pot 2', 'sizes': '22cm'}, {'name': 'Stock Pot 2', 'sizes': '24cm'}, {'name': 'Stock Pot 2', 'sizes': '28cm'}, {'name': 'Stock Pot 3', 'sizes': '20cm'}, {'name': 'Stock Pot 4', 'sizes': '22cm'}, {'name': 'Stock Pot 4', 'sizes': '24cm'}, {'name': 'Stock Pot 5', 'sizes': '24cm'}, {'name': 'Oval Stock Pot', 'sizes': '30x24cm'}, {'name': '24cm Gray Casserole', 'sizes': '24cm', 'image': '24cm-gray-casserole.jpg'}, {'name': '24cm Red Casserole', 'sizes': '24cm', 'image': '24cm-red-casserole.jpg'}, {'name': '25cm Lake Blue Casserole', 'sizes': '25cm', 'image': '25cm-lake-blue-casserole.png'}, {'name': '25cm Creamy Casserole', 'sizes': '25cm', 'image': '25cm-creamy-casserole.jpg'}, {'name': 'Oval Blue Casserole', 'sizes': 'Customizable', 'image': 'oval-blue-casserole.jpg'}, {'name': 'White Casserole', 'sizes': 'Customizable', 'image': 'white-casserole.jpg'}];
         var SQUARE = "\u25A0";
         function renderProducts(items, id) {
@@ -83,7 +82,9 @@
                 var imgHtml = hasImg
                     ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
                     : '';
-                var fallback = '<span class="emoji">' + SQUARE + '</span>';
+                var fallback = hasImg
+                    ? '<span class="emoji" style="display:none;">' + SQUARE + '</span>'
+                    : '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -91,12 +92,11 @@
             el.innerHTML = html;
         }
         renderProducts(products, 'product-list');
-    
+
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-
-        </script>
+    </script>
 
 
 </body>

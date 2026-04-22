@@ -276,7 +276,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     align-items: center; justify-content: center;
     position: relative; overflow: hidden;
 }
-.product-img .emoji { font-size: 40px; color: var(--border); font-family: serif; }
 .product-tag {
     position: absolute; top: 10px; left: 10px;
     background: var(--primary); color: #fff;

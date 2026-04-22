@@ -70,7 +70,6 @@
     <a href="../contact.html" class="fixed-cta">Get a Quote</a>
 
     <script>
-
         var products = [{'name': 'Frying Pan 1', 'sizes': '24cm'}, {'name': 'Frying Pan 2', 'sizes': '25cm'}, {'name': 'Frying Pan 3', 'sizes': '26cm'}, {'name': 'Frying Pan 3', 'sizes': '30cm'}, {'name': 'Frying Pan 4', 'sizes': '26cm'}, {'name': 'Frying Pan 5', 'sizes': '26cm'}, {'name': 'Classic Pre-Seasoned Fry Pan 26cm', 'sizes': '26cm', 'image': 'classic-pre-seasoned-fry-pan-26cm.jpg'}, {'name': '26cm Blue Fry Pan', 'sizes': '26cm', 'image': '26cm-blue-fry-pan.jpg'}, {'name': '26cm Gray Fry Pan', 'sizes': '26cm', 'image': '26cm-gray-fry-pan.jpg'}, {'name': '26cm Lake Blue Fry Pan', 'sizes': '26cm', 'image': '26cm-lake-blue-fry-pan.jpg'}, {'name': '26cm Red Fry Pan', 'sizes': '26cm', 'image': '26cm-red-fry-pan.jpg'}, {'name': '26cm White Fry Pan', 'sizes': '26cm', 'image': '26cm-white-fry-pan.jpg'}];
         var SQUARE = "\u25A0";
         function renderProducts(items, id) {
@@ -83,7 +82,9 @@
                 var imgHtml = hasImg
                     ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
                     : '';
-                var fallback = '<span class="emoji">' + SQUARE + '</span>';
+                var fallback = hasImg
+                    ? '<span class="emoji" style="display:none;">' + SQUARE + '</span>'
+                    : '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -91,12 +92,11 @@
             el.innerHTML = html;
         }
         renderProducts(products, 'product-list');
-    
+
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-
-        </script>
+    </script>
 
 </body>
 </html>

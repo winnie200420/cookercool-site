@@ -70,7 +70,6 @@
     <a href="../contact.html" class="fixed-cta">Get a Quote</a>
 
     <script>
-
         var products = [{'name': 'Grill Pan 1', 'sizes': '26cm'}, {'name': 'Grill Pan 1', 'sizes': '28cm'}, {'name': 'Grill Pan 2', 'sizes': '24cm'}, {'name': 'Grill Pan 3', 'sizes': '25cm'}, {'name': 'Griddle', 'sizes': '33x23cm'}, {'name': 'Grill Pan A - 35cm', 'sizes': '35cm', 'image': 'grill-pan-a-35cm.jpg'}, {'name': 'Grill Pan B', 'sizes': 'Customizable', 'image': 'grill-pan-b.png'}, {'name': 'Red Grill Pan', 'sizes': 'Customizable', 'image': 'red-grill-pan.jpg'}, {'name': 'Red Loaf Pan', 'sizes': 'Customizable', 'image': 'red-loaf-pan.jpg'}];
         var SQUARE = "\u25A0";
         function renderProducts(items, id) {
@@ -83,7 +82,9 @@
                 var imgHtml = hasImg
                     ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
                     : '';
-                var fallback = '<span class="emoji">' + SQUARE + '</span>';
+                var fallback = hasImg
+                    ? '<span class="emoji" style="display:none;">' + SQUARE + '</span>'
+                    : '<span class="emoji">' + SQUARE + '</span>';
                 html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
@@ -91,12 +92,11 @@
             el.innerHTML = html;
         }
         renderProducts(products, 'product-list');
-    
+
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-
-        </script>
+    </script>
 
 </body>
 </html>
