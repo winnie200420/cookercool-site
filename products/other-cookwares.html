@@ -19,11 +19,9 @@
                     <div class="dropdown">
                         <div class="dropdown-item"><a href="cast-iron.html" class="dropdown-link">Pre-seasoned Cookware</a>
                             <div class="sub-dropdown">
-                                <a href="tangguo.html" class="sub-dropdown-link">Casseroles</a>
-                                <a href="jianguo.html" class="sub-dropdown-link">Frying Pans</a>
                                 <a href="helan.html" class="sub-dropdown-link">Dutch Ovens</a>
-                                <a href="niupai.html" class="sub-dropdown-link">Grill &amp; Griddle</a>
-                                <a href="naiguo.html" class="sub-dropdown-link">Sauce Pots</a>
+                                <a href="camping.html" class="sub-dropdown-link">Camping Sets</a>
+                                <a href="pre-seasoned-skillet.html" class="sub-dropdown-link">Skillet &amp; Grill</a>
                             </div>
                         </div>
                         <div class="dropdown-item"><a href="enamel-sets.html" class="dropdown-link">Enamel Cookware</a>
@@ -66,33 +64,39 @@
         </div>
     </div>
 
-    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a href="../index.html" class="footer-logo"><img src="../images/COOKERCOOL.png" alt="CookerCool" class="footer-logo-img"></a><span class="footer-logo-text">Cookercool</span><p class="footer-desc">Professional manufacturer of pre-seasoned cast iron and enamel cookware.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="cast-iron.html">Pre-seasoned Cookware</a></li><li><a href="enamel-sets.html">Enamel Cookware</a></li><li><a href="other-cookwares.html">Other Cookwares</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-products"><h4>Products</h4><ul><li><a href="tangguo.html">Casseroles</a></li><li><a href="jianguo.html">Frying Pans</a></li><li><a href="helan.html">Dutch Ovens</a></li><li><a href="enamel-sets.html">Enamel Sets</a></li><li><a href="other-cookwares.html">Other Cookwares</a></li></ul></div><div class="footer-contact"><h4>Contact</h4><p>Email: alicemeng@cookercool.com</p><p>Phone: +86 18722347352</p></div></div><div class="footer-bottom"><p>&copy; 2026 Tianjin New Trend Import &amp; Export Co., Ltd. All Rights Reserved.</p></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a href="../index.html" class="footer-logo"><img src="../images/COOKERCOOL.png" alt="CookerCool" class="footer-logo-img"></a><span class="footer-logo-text">Cookercool</span><p class="footer-desc">Professional manufacturer of pre-seasoned cast iron and enamel cookware.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="cast-iron.html">Pre-seasoned Cookware</a></li><li><a href="enamel-sets.html">Enamel Cookware</a></li><li><a href="other-cookwares.html">Other Cookwares</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li></ul></div><div class="footer-products"><h4>Products</h4><ul><li><a href="helan.html">Dutch Ovens</a></li><li><a href="camping.html">Camping Sets</a></li><li><a href="pre-seasoned-skillet.html">Skillet &amp; Grill</a></li><li><a href="enamel-sets.html">Enamel Cookware</a></li><li><a href="other-cookwares.html">Other Cookwares</a></li></ul></div><div class="footer-contact"><h4>Contact</h4><p>Email: alicemeng@cookercool.com</p><p>Phone: +86 18722347352</p></div></div><div class="footer-bottom"><p>&copy; 2026 Tianjin New Trend Import &amp; Export Co., Ltd. All Rights Reserved.</p></div></div></footer>
     <a href="../contact.html" class="fixed-cta">Get a Quote</a>
 
     <script>
         var products = [
-            { name: "Carbon Steel Wok", sizes: "30cm" },
-            { name: "Carbon Steel Wok", sizes: "35cm" },
-            { name: "Stainless Steel Frying Pan", sizes: "24cm" },
-            { name: "Stainless Steel Frying Pan", sizes: "28cm" },
+            {name: 'Carbon Steel Wok', sizes: '32cm', image: 'Carbon steel wok (32cm).jpg'},
+            {name: 'Stainless Steel Fry Pan', sizes: '26cm', image: 'Stainless steel fry pan \ufffd26cm\ufffd.png'}
         ];
-        var SQUARE = "\u25A0";
+        var SQUARE = "\u2717";
         function renderProducts(items, id) {
             var el = document.getElementById(id);
             if (!el) return;
             var html = "";
             for (var i = 0; i < items.length; i++) {
                 var p = items[i];
-                html += '<div class="product-item"><div class="product-item-img"><span class="emoji">' + SQUARE + '</span></div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
+                var hasImg = !!p.image;
+                var imgHtml = hasImg
+                    ? '<img src="../images/' + p.image + '" alt="' + (p.name || '') + '" class="product-img" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">'
+                    : '';
+                var fallback = hasImg
+                    ? '<span class="emoji" style="display:none;">' + SQUARE + '</span>'
+                    : '<span class="emoji">' + SQUARE + '</span>';
+                html += '<div class="product-item"><div class="product-item-img">' + imgHtml + fallback + '</div><div class="product-item-body"><div class="product-item-title">' + (p.name || '') + '</div>';
                 if (p.sizes) html += '<div class="product-item-sizes">' + p.sizes + '</div>';
                 html += '</div></div>';
             }
             el.innerHTML = html;
         }
         renderProducts(products, 'product-list');
+
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
         window.addEventListener('scroll', function() { var c = document.querySelector('.fixed-cta'); if (c) c.style.display = window.scrollY > 600 ? 'block' : 'none'; });
-        </script>
+    </script>
 </body>
 </html>
