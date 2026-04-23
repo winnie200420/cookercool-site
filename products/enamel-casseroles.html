@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enamel Cookware - CookerCool</title>
-    <meta name="description" content="Browse CookerCool's full range of enamel cookware - casseroles, skillets, grill pans, and complete sets.">
+    <title>Casseroles - CookerCool</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
@@ -45,9 +44,9 @@
 
     <div class="page-header">
         <div class="container">
-            <div class="breadcrumb"><a href="../index.html">Home</a> / <span>Products</span> / <span>Enamel Cookware</span></div>
-            <h1>Enamel Cookware</h1>
-            <p>Casseroles &middot; Skillet &amp; Grill &middot; Enamel Sets</p>
+            <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="enamel-sets.html">Enamel Cookware</a> / <span>Casseroles</span></div>
+            <h1>Casseroles</h1>
+            <p>Enamelled cast iron casseroles — braisers, sauce pots, and stock pots in vibrant colors</p>
         </div>
     </div>
 
@@ -55,36 +54,8 @@
         <div class="container">
 
             <div class="product-group">
-                <div class="group-header">
-                    <div>
-                        <div class="group-title">Casseroles</div>
-                        <div class="group-title-zh">Enamelled casseroles, braisers, and sauce pots</div>
-                    </div>
-                    <a href="enamel-casseroles.html" class="group-link">View All &rarr;</a>
-                </div>
-                <div class="products-row" id="casserole-items"></div>
-            </div>
-
-            <div class="product-group">
-                <div class="group-header">
-                    <div>
-                        <div class="group-title">Skillet &amp; Grill</div>
-                        <div class="group-title-zh">Enamelled frying pans, grill pans, woks</div>
-                    </div>
-                    <a href="enamel-skillet.html" class="group-link">View All &rarr;</a>
-                </div>
-                <div class="products-row" id="skillet-items"></div>
-            </div>
-
-            <div class="product-group">
-                <div class="group-header">
-                    <div>
-                        <div class="group-title">Enamel Sets</div>
-                        <div class="group-title-zh">Complete enamel cookware sets</div>
-                    </div>
-                    <a href="enamel-sets.html" class="group-link">View All &rarr;</a>
-                </div>
-                <div class="products-row" id="set-items"></div>
+                <div class="group-header"><div><div class="group-title">Casseroles</div><div class="group-title-zh">Enamelled casseroles, braisers and sauce pots</div></div></div>
+                <div class="products-row" id="product-list"></div>
             </div>
 
         </div>
@@ -92,8 +63,8 @@
 
     <div class="cta-banner">
         <div class="container">
-            <h2>Want Custom Enamel Sets?</h2>
-            <p>We can create custom color combinations and packaging for your brand.</p>
+            <h2>Want Custom Colors or Sizes?</h2>
+            <p>We can create custom color combinations and OEM packaging for your brand.</p>
             <a href="../contact.html" class="btn btn-white">Contact Us</a>
         </div>
     </div>
@@ -102,8 +73,24 @@
     <a href="../contact.html" class="fixed-cta">Get a Quote</a>
 
     <script>
+        var products = [
+            {name: '2 in 1 Dutch Oven', sizes: '26cm', image: '2 in 1 dutchoven \ufffd26cm\ufffd.jpg'},
+            {name: 'Blue Braiser', sizes: '30cm', image: 'Bule Braiser (30cm).jpg'},
+            {name: 'Blue Casserole', sizes: '25cm', image: 'Bule casserole (25cm).jpg'},
+            {name: 'Blue Oval Casserole', sizes: '30x21cm', image: 'Bule oval casserole( 30X21cm).jpg'},
+            {name: 'Cream Casserole', sizes: '25cm', image: 'Creamy casserole\ufffd25cm\ufffd.jpg'},
+            {name: 'Gray Casserole', sizes: '24cm', image: 'Gray casserole\ufffd24cm\ufffd.jpg'},
+            {name: 'Lake Blue Braiser', sizes: '30cm', image: 'Lake bule braiser (30cm).jpg'},
+            {name: 'Lake Blue Casserole', sizes: '25cm', image: 'Lake bule casserole\ufffd25cm\ufffd.jpg'},
+            {name: 'Lake Blue Sauce Pot', sizes: '19cm', image: 'Lake bule sauce pot (19cm).png'},
+            {name: 'Long Handle Dutch Oven', sizes: '26cm', image: 'Long handle dutchoven (26cm).jpg'},
+            {name: 'Red Casserole', sizes: '24cm', image: 'Red casserole \ufffd24cm\ufffd.jpg'},
+            {name: 'White Braiser', sizes: '30cm', image: 'White Braiser (30cm).jpg'},
+            {name: 'White Casserole', sizes: '25cm', image: 'White casserole(25cm).jpg'},
+            {name: 'White Sauce Pot', sizes: '19cm', image: 'White sauce pot (19cm).jpg'}
+        ];
         var SQUARE = "\u2717";
-        function render(items, id) {
+        function renderProducts(items, id) {
             var el = document.getElementById(id);
             if (!el) return;
             var html = "";
@@ -122,31 +109,7 @@
             }
             el.innerHTML = html;
         }
-
-        var casseroles = [
-            {name: '2 in 1 Dutch Oven', sizes: '26cm', image: '2 in 1 dutchoven \ufffd26cm\ufffd.jpg'},
-            {name: 'Blue Braiser', sizes: '30cm', image: 'Bule Braiser (30cm).jpg'},
-            {name: 'Blue Casserole', sizes: '25cm', image: 'Bule casserole (25cm).jpg'},
-            {name: 'Blue Oval Casserole', sizes: '30x21cm', image: 'Bule oval casserole( 30X21cm).jpg'}
-        ];
-
-        var skillets = [
-            {name: 'Black Red Grill Pan', sizes: '26cm', image: 'Black red grill pan (26cm).jpg'},
-            {name: 'Blue Fry Pan', sizes: '26cm', image: 'Bule fry pan (26cm).jpg'},
-            {name: 'Gray Fry Pan', sizes: '26cm', image: 'Gray fry pan (26cm).jpg'},
-            {name: 'Red Loaf Pan', sizes: '33x23cm', image: 'Red loaf pan(33X23cm).jpg'}
-        ];
-
-        var sets = [
-            {name: '3pcs Black Set', sizes: 'Customizable', image: '3pcs black  set.jpg'},
-            {name: '3pcs Red Set', sizes: 'Customizable', image: '3pcs red set.jpg'},
-            {name: '5pcs Lake Blue Set', sizes: 'Customizable', image: '5pcs lake bule set.jpg'},
-            {name: '7pcs Green Set', sizes: 'Customizable', image: '7pcs green set.jpg'}
-        ];
-
-        render(casseroles, 'casserole-items');
-        render(skillets, 'skillet-items');
-        render(sets, 'set-items');
+        renderProducts(products, 'product-list');
 
         window.addEventListener('scroll', function() { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
         document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('nav-list').classList.toggle('open'); });
