@@ -4,14 +4,14 @@
 
 // Featured products
 const featuredProducts = [
-    { title_en: "Cast Iron Stock Pot", sku: "SK-EC1-26", size: "26cm", tag: "Best Seller", cat: "cast-iron" },
-    { title_en: "Cast Iron Dutch Oven", sku: "SK-ED1-26", size: "26cm", tag: "Popular", cat: "cast-iron" },
-    { title_en: "Cast Iron Frying Pan", sku: "SK-EP3-26", size: "26cm", tag: "", cat: "cast-iron" },
-    { title_en: "Cast Iron Grill Pan", sku: "SK-EG1-28", size: "28cm", tag: "", cat: "cast-iron" },
-    { title_en: "Cast Iron Wok", sku: "SK-EW1-36", size: "36cm", tag: "", cat: "cast-iron" },
-    { title_en: "Cast Iron Milk Pot", sku: "SK-EM1-19", size: "19cm", tag: "", cat: "cast-iron" },
-    { title_en: "Enamel 3-Piece Set", sku: "EZ3-3", size: "3-Piece", tag: "Best Seller", cat: "enamel-sets" },
-    { title_en: "Enamel 4-Piece Set", sku: "EZ12-4", size: "4-Piece", tag: "Popular", cat: "enamel-sets" },
+    { title_en: "Classic Fry Pan", sku: "Pre-seasoned", size: "26cm", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "Classic fry pan(26cm).jpg" },
+    { title_en: "3pcs Fry Pan Set", sku: "Pre-seasoned", size: "Customizable", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "3pcs Fry Pan Set.jpg" },
+    { title_en: "Dutch Oven", sku: "Pre-seasoned", size: "Customizable", tag: "Popular", cat: "helan", image: "Dutch Oven.jpg" },
+    { title_en: "Camping Set", sku: "Pre-seasoned", size: "Customizable", tag: "", cat: "camping", image: "Camping Set (1).jpg" },
+    { title_en: "Red Casserole", sku: "Enamel", size: "24cm", tag: "Popular", cat: "enamel-casseroles", image: "Red casserole (24cm).jpg" },
+    { title_en: "Blue Fry Pan", sku: "Enamel", size: "26cm", tag: "Best Seller", cat: "enamel-skillet", image: "Bule fry pan (26cm).jpg" },
+    { title_en: "Red Wok", sku: "Enamel", size: "36cm", tag: "", cat: "enamel-skillet", image: "Red wok (36cm).jpg" },
+    { title_en: "5pcs Red Set", sku: "Enamel", size: "Customizable", tag: "", cat: "enamel-sets", image: "5pcs red set.jpg" },
 ];
 
 // ----- Featured Products -----
@@ -21,10 +21,14 @@ function renderFeaturedProducts() {
 
     grid.innerHTML = featuredProducts.map(p => {
         const tagHtml = p.tag ? `<span class="product-tag">${p.tag}</span>` : '';
+        const imgHtml = p.image
+            ? `<img src="images/${p.image}" alt="${p.title_en}" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">`
+            : '';
         return `
             <div class="product-card">
                 <div class="product-img">
-                    <span class="emoji">&#9632;</span>
+                    ${imgHtml}
+                    <span class="emoji" ${imgHtml ? 'style="display:none;"' : ''}>&#9632;</span>
                     ${tagHtml}
                 </div>
                 <div class="product-body">
