@@ -59,19 +59,19 @@
         </div>
     </header>
 
-    <!-- ========== HERO BANNER CAROUSEL ========== -->
+    <!-- 1-3. HERO BANNERS -->
     <section class="hero-carousel" id="home">
         <div class="carousel-track" id="carousel-track">
             <div class="carousel-slide slide-1 active">
-                <div class="slide-bg" style="background-image: url('images/hero-banner-1.avif');"></div>
+                <div class="slide-bg" style="background-image: url('images/slices/1.jpg');"></div>
                 <div class="slide-overlay"></div>
             </div>
             <div class="carousel-slide slide-2">
-                <div class="slide-bg" style="background-image: url('images/hero-banner-2.avif');"></div>
+                <div class="slide-bg" style="background-image: url('images/slices/2.jpg');"></div>
                 <div class="slide-overlay"></div>
             </div>
             <div class="carousel-slide slide-3">
-                <div class="slide-bg" style="background-image: url('images/hero-banner-3.avif');"></div>
+                <div class="slide-bg" style="background-image: url('images/slices/3.jpg');"></div>
                 <div class="slide-overlay"></div>
             </div>
         </div>
@@ -84,209 +84,59 @@
         </button>
     </section>
 
-    <!-- ========== CATEGORY NAVIGATION ========== -->
-    <section class="category-nav">
-        <div class="container">
-            <img src="images/category-nav.avif" alt="Product Categories" class="category-nav-img">
-        </div>
+    <!-- 4. CATEGORY NAV -->
+    <section class="home-slice">
+        <img src="images/slices/4.jpg" alt="Product Categories" class="slice-full-img">
     </section>
 
-    <!-- ========== VIDEO SECTION 1: PRODUCTION PROCESS ========== -->
-    <section class="video-section-block" id="video-production">
-        <div class="container">
-            <div class="video-section-header">
-                <div class="section-tag">Production Capability</div>
-                <h2 class="section-title">Cast Iron Customized Solution</h2>
-            </div>
-            <div class="video-split-layout">
-                <div class="video-split-left">
-                    <div class="video-thumb-wrap">
-                        <img src="images/factory-qc-warehouse.jpeg" alt="Production Process" class="video-thumb-img">
-                        <div class="video-thumb-overlay"></div>
-                        <button class="video-play-btn" onclick="playVideo('vp')" aria-label="Play Video">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg>
-                        </button>
-                        <div class="video-thumb-label">Production Process</div>
-                    </div>
-                    <video class="video-elm" id="vp" src="videos/production-process.mp4" controls preload="metadata"></video>
-                </div>
-                <div class="video-split-right">
-                    <img src="images/production-flow.avif" alt="Production Flow" class="video-split-graphic">
-                </div>
-            </div>
-        </div>
+    <!-- 5. COMPANY INTRO -->
+    <section class="home-slice">
+        <img src="images/slices/5.jpg" alt="Company Profile" class="slice-full-img">
     </section>
 
-    <!-- ========== FEATURED PRODUCTS ========== -->
-    <section class="section home-products" id="products">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Featured Products</div>
-                <h2 class="section-title">Our Best Sellers</h2>
-                <p class="section-desc">From classic cast iron to modern enamel — find the cookware your customers love.</p>
-            </div>
-            <div class="products-grid" id="featured-products"></div>
-            <div style="text-align:center; margin-top: 40px;">
-                <a href="products/cast-iron.html" class="btn btn-outline">View All Products</a>
-            </div>
-        </div>
+    <!-- 6. CAST IRON PRODUCTION FLOW -->
+    <section class="home-slice">
+        <img src="images/slices/6.jpg" alt="Cast Iron Production Process" class="slice-full-img">
     </section>
 
-    <!-- ========== VIDEO SECTION 2: COMPANY INTRODUCTION ========== -->
-    <section class="video-section-block" id="video-company">
-        <div class="container">
-            <div class="video-section-header">
-                <div class="section-tag">About CookerCool</div>
-                <h2 class="section-title">Your Trusted Cookware Partner</h2>
-            </div>
-            <div class="video-full-layout">
-                <div class="video-full-wrap">
-                    <img src="images/factory-exterior.jpeg" alt="Company Introduction" class="video-thumb-img">
-                    <div class="video-thumb-overlay"></div>
-                    <button class="video-play-btn video-play-btn-lg" onclick="playVideo('vc')" aria-label="Play Video">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg>
-                    </button>
-                    <div class="video-thumb-label">Company Introduction</div>
-                </div>
-                <video class="video-elm" id="vc" src="videos/company-intro.mp4" controls preload="metadata"></video>
-            </div>
-        </div>
+    <!-- 7. VIDEO + WAREHOUSE -->
+    <section class="home-slice">
+        <img src="images/slices/7.jpg" alt="Production & Warehouse" class="slice-full-img">
     </section>
 
-    <!-- ========== COMPANY OVERVIEW ========== -->
-    <section class="section home-company">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Why CookerCool</div>
-                <h2 class="section-title">Our Core Advantages</h2>
-            </div>
-            <div class="company-grid">
-                <div class="company-text">
-                    <p class="about-lead">CookerCool is a new brand in kitchen, specializing in one-stop, light customized and fast delivery cast iron and enamel cookwares.</p>
-                    <p>With more than 17 years experience in supplying industrial components to Europe and professional technicians, we are implementing a new strategy to enter the kitchen field.</p>
-                    <p>Our foundry is located in South of China for mass production and assembly, while setting one assembly line at Tianjin for customized orders. We provide customers with technical and design service, helping to select the right product for every type of use.</p>
-                    <div class="company-highlights">
-                        <div class="highlight-item">
-                            <span class="icon">Factory</span>
-                            <div><strong>Full Production Line</strong><small>Foundry + Assembly + QC</small></div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">Custom</span>
-                            <div><strong>OEM &amp; ODM</strong><small>Logo, color, packaging customizable</small></div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">Globe</span>
-                            <div><strong>Global Shipping</strong><small>FOB, CIF, DDP worldwide</small></div>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="icon">Quality</span>
-                            <div><strong>Quality Certified</strong><small>SGS, FDA, ISO standards</small></div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 28px;">
-                        <a href="about.html" class="btn btn-primary">Learn More About Us</a>
-                    </div>
-                </div>
-                <div class="about-img">
-                    <img src="images/factory-exterior.jpeg" alt="CookerCool Factory" class="about-img-real" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="about-img-placeholder" style="display:none;">Factory Photo</div>
-                </div>
-            </div>
-        </div>
+    <!-- 8. ALUMINUM PROCESS -->
+    <section class="home-slice">
+        <img src="images/slices/8.jpg" alt="Aluminum Production Process" class="slice-full-img">
     </section>
 
-    <!-- ========== WHY CHOOSE US ========== -->
-    <section class="section home-why">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Why Partners Choose Us</div>
-                <h2 class="section-title">Why CookerCool</h2>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🏭</div>
-                    <h3>15+ Years Experience</h3>
-                    <p>Specialized in cast iron and stainless steel cookware manufacturing. We know materials, processes, and quality standards inside out.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">✅</div>
-                    <h3>Strict Quality Control</h3>
-                    <p>Every piece is inspected for weight, dimension, surface quality, and cooking performance. Material test reports available.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🎨</div>
-                    <h3>Full Customization</h3>
-                    <p>Logo engraving, custom colors, branded packaging, and product design. We handle everything from concept to delivery.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">💰</div>
-                    <h3>Competitive Pricing</h3>
-                    <p>Direct factory pricing with flexible MOQ. Cost-effective solutions without compromising quality.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🚢</div>
-                    <h3>Reliable Global Shipping</h3>
-                    <p>We handle export documentation, packing, and shipping. Trusted by partners in 40+ countries worldwide.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">💬</div>
-                    <h3>Fast &amp; Responsive</h3>
-                    <p>We respond to inquiries within 24 hours. Dedicated account manager for smooth communication throughout your order.</p>
-                </div>
-            </div>
-        </div>
+    <!-- 9. COOKERCOOL PRICE & MOQ -->
+    <section class="home-slice">
+        <img src="images/slices/9.jpg" alt="Price & MOQ" class="slice-full-img">
     </section>
 
-    <!-- ========== FACTORY IMAGES STRIP ========== -->
-    <section class="section home-factory-strip">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Factory &amp; Team</div>
-                <h2 class="section-title">Behind Every Product</h2>
-            </div>
-            <div class="factory-strip-grid">
-                <div class="factory-strip-item">
-                    <img src="images/factory-exterior.jpeg" alt="Factory Exterior" onerror="this.style.display='none'">
-                </div>
-                <div class="factory-strip-item">
-                    <img src="images/factory-interior-roof.jpeg" alt="Factory Interior" onerror="this.style.display='none'">
-                </div>
-                <div class="factory-strip-item">
-                    <img src="images/factory-seasoning.jpeg" alt="Production Line" onerror="this.style.display='none'">
-                </div>
-                <div class="factory-strip-item">
-                    <img src="images/factory-warehouse.jpeg" alt="Warehouse" onerror="this.style.display='none'">
-                </div>
-                <div class="factory-strip-item">
-                    <img src="images/products/product-showroom.jpeg" alt="Showroom" onerror="this.style.display='none'">
-                </div>
-                <div class="factory-strip-item">
-                    <img src="images/products/product-office-team.jpeg" alt="Team" onerror="this.style.display='none'">
-                </div>
-            </div>
-        </div>
+    <!-- 10. VALUE PROPOSITION (3 CARDS) -->
+    <section class="home-slice">
+        <img src="images/slices/10.jpg" alt="Our Services" class="slice-full-img">
     </section>
 
-    <!-- ========== TRUST SECTION ========== -->
-    <section class="section home-trust">
-        <div class="container">
-            <div class="trust-section-block">
-                <div class="section-header">
-                    <div class="section-tag">Certifications</div>
-                    <h2 class="section-title">Trusted by Standards</h2>
-                    <p class="section-desc">All products meet international quality and safety standards.</p>
-                </div>
-                <img src="images/certifications.jpeg" alt="Certifications" class="trust-full-img">
-            </div>
+    <!-- 11-14. OUR PARTNERS PHOTOS -->
+    <section class="home-slice">
+        <img src="images/slices/11.jpg" alt="Our Partners" class="slice-full-img">
+    </section>
 
-            <div class="trust-section-block">
-                <div class="section-header">
-                    <div class="section-tag">Global Partners</div>
-                    <h2 class="section-title">Be Trusted on a Global Scale</h2>
-                </div>
-                <img src="images/partners-logos.jpeg" alt="Partner Brands" class="trust-full-img">
-            </div>
-        </div>
+    <!-- 15. CLIENT LOGOS -->
+    <section class="home-slice">
+        <img src="images/slices/15.jpg" alt="Client Logos" class="slice-full-img">
+    </section>
+
+    <!-- 16. CERTIFICATIONS -->
+    <section class="home-slice">
+        <img src="images/slices/16.jpg" alt="Certifications" class="slice-full-img">
+    </section>
+
+    <!-- 17. FACTORY IMAGES + CORE VALUES -->
+    <section class="home-slice">
+        <img src="images/slices/17.jpg" alt="Factory & Core Values" class="slice-full-img">
     </section>
 
     <!-- ========== CTA ========== -->
@@ -346,14 +196,5 @@
     <a href="contact.html" class="fixed-cta">Get a Quote</a>
 
     <script src="script.js"></script>
-    <script>
-    function playVideo(id) {
-        var v = document.getElementById(id);
-        var wrap = v.previousElementSibling;
-        if (wrap) wrap.style.display = 'none';
-        v.style.display = 'block';
-        v.play();
-    }
-    </script>
 </body>
 </html>

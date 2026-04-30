@@ -1043,3 +1043,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .video-play-btn { width: 52px; height: 52px; }
     .video-play-btn-lg { width: 64px; height: 64px; }
 }
+/* Slice layout - full-width images */
+.home-slice {
+    background: #fff;
+    overflow: hidden;
+}
+
+.slice-full-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
