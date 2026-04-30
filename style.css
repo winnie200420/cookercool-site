@@ -1259,3 +1259,47 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .video-split-section .video-split-points li {
     color: rgba(255,255,255,0.75);
 }
+/* Cast Iron Video: full-width image + video overlaid on left - OPTIMIZED */
+.cast-iron-video-section {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.civ-bg {
+    position: relative;
+    width: 100%;
+    max-height: 520px;
+    overflow: hidden;
+}
+
+.civ-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.civ-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.civ-video-wrap {
+    width: 100%;
+    max-width: 680px;
+    padding: 20px 0 20px 40px;
+}
+
+.civ-video-wrap .video-player-box {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
