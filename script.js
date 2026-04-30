@@ -2,43 +2,52 @@
    CookerCool Website - JavaScript
    ========================================= */
 
-// Featured products
-const featuredProducts = [
-    { title_en: "Classic Fry Pan", sku: "Pre-seasoned", size: "26cm", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "Classic fry pan(26cm).jpg" },
-    { title_en: "3pcs Fry Pan Set", sku: "Pre-seasoned", size: "Customizable", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "3pcs Fry Pan Set.jpg" },
-    { title_en: "Dutch Oven", sku: "Pre-seasoned", size: "Customizable", tag: "Popular", cat: "helan", image: "Dutch Oven.jpg" },
-    { title_en: "Camping Set", sku: "Pre-seasoned", size: "Customizable", tag: "", cat: "camping", image: "Camping Set (1).jpg" },
-    { title_en: "Red Casserole", sku: "Enamel", size: "24cm", tag: "Popular", cat: "enamel-casseroles", image: "Red casserole (24cm).jpg" },
-    { title_en: "Blue Fry Pan", sku: "Enamel", size: "26cm", tag: "Best Seller", cat: "enamel-skillet", image: "Bule fry pan (26cm).jpg" },
-    { title_en: "Red Wok", sku: "Enamel", size: "36cm", tag: "", cat: "enamel-skillet", image: "Red wok (36cm).jpg" },
-    { title_en: "5pcs Red Set", sku: "Enamel", size: "Customizable", tag: "", cat: "enamel-sets", image: "5pcs red set.jpg" },
-];
+// ----- Carousel -----
+function initCarousel() {
+    const track = document.getElementById('carousel-track');
+    const indicators = document.getElementById('carousel-indicators');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    if (!track || !indicators) return;
 
-// ----- Featured Products -----
-function renderFeaturedProducts() {
-    const grid = document.getElementById('featured-products');
-    if (!grid) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    let current = 0;
+    let timer = null;
 
-    grid.innerHTML = featuredProducts.map(p => {
-        const tagHtml = p.tag ? `<span class="product-tag">${p.tag}</span>` : '';
-        const imgHtml = p.image
-            ? `<img src="images/${p.image}" alt="${p.title_en}" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">`
-            : '';
-        return `
-            <div class="product-card">
-                <div class="product-img">
-                    ${imgHtml}
-                    <span class="emoji" ${imgHtml ? 'style="display:none;"' : ''}>&#9632;</span>
-                    ${tagHtml}
-                </div>
-                <div class="product-body">
-                    <h3 class="product-title">${p.title_en}</h3>
-                    <p class="product-title-zh">${p.sku}</p>
-                    <p class="product-size">Size: ${p.size}</p>
-                </div>
-            </div>
-        `;
-    }).join('');
+    // Build indicators
+    Array.from(slides).forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        btn.addEventListener('click', () => goTo(i));
+        indicators.appendChild(btn);
+    });
+
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        indicators.children[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        indicators.children[current].classList.add('active');
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startTimer() {
+        timer = setInterval(next, 5000);
+    }
+    function stopTimer() {
+        clearInterval(timer);
+    }
+
+    prevBtn && prevBtn.addEventListener('click', () => { stopTimer(); prev(); startTimer(); });
+    nextBtn && nextBtn.addEventListener('click', () => { stopTimer(); next(); startTimer(); });
+
+    track.addEventListener('mouseenter', stopTimer);
+    track.addEventListener('mouseleave', startTimer);
+
+    startTimer();
 }
 
 // ----- Header Scroll -----
@@ -100,4 +109,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // Init
-renderFeaturedProducts();
+document.addEventListener('DOMContentLoaded', () => {
+    initCarousel();
+});

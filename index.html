@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CookerCool - Premium Cast Iron &amp; Enamel Cookware Manufacturer</title>
-    <meta name="description" content="Tianjin New Trend Import &amp; Export Co., Ltd. - Professional manufacturer of pre-seasoned cast iron and enamel cookware. OEM &amp; ODM available.">
+    <meta name="description" content="Professional manufacturer of pre-seasoned cast iron and enamel cookware. OEM & ODM available. 17+ years experience, serving 40+ countries worldwide.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         <div class="container header-inner">
             <a href="index.html" class="logo">
                 <img src="images/COOKERCOOL.png" alt="CookerCool" class="logo-img">
-                <span class="logo-text">Cookercool</span>
+                <span class="logo-text">CookerCool</span>
             </a>
             <nav class="main-nav">
                 <ul class="nav-list" id="nav-list">
@@ -59,29 +59,67 @@
         </div>
     </header>
 
-    <!-- ========== HERO ========== -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-overlay"></div>
-            <div class="hero-pattern"></div>
-        </div>
-        <div class="container hero-content">
-            <div class="hero-badge">Premium Cookware Manufacturer</div>
-            <h1 class="hero-title">From Our Kitchen<br>to Yours</h1>
-            <p class="hero-subtitle">Professional manufacturer of pre-seasoned cast iron and enamel cookware. OEM &amp; ODM partner for global brands. One-stop light customization with fast delivery.</p>
-            <div class="hero-btns">
-                <a href="products/cast-iron.html" class="btn btn-primary">View Products</a>
-                <a href="contact.html" class="btn btn-white">Get a Quote</a>
+    <!-- ========== HERO BANNER CAROUSEL ========== -->
+    <section class="hero-carousel" id="home">
+        <div class="carousel-track" id="carousel-track">
+            <div class="carousel-slide slide-1">
+                <div class="slide-bg" style="background-image: url('images/hero-banner-1.avif');"></div>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <div class="slide-badge">Premium Cookware</div>
+                    <h2 class="slide-title">Cast Iron<br>Enameled Cookware Set</h2>
+                    <p class="slide-subtitle">Meet your new favorite cooking pots</p>
+                    <div class="hero-btns">
+                        <a href="products/cast-iron.html" class="btn btn-primary">View Products</a>
+                        <a href="contact.html" class="btn btn-white">Get a Quote</a>
+                    </div>
+                </div>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item"><strong>17+</strong><span>Years Experience</span></div>
-                <div class="stat-item"><strong>40+</strong><span>Countries Served</span></div>
-                <div class="stat-item"><strong>500+</strong><span>Global Partners</span></div>
+            <div class="carousel-slide slide-2">
+                <div class="slide-bg" style="background-image: url('images/hero-banner-2.avif');"></div>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <div class="slide-badge">Pre-seasoned Cookware</div>
+                    <h2 class="slide-title">Cast Iron<br>Pre-seasoned Cookware</h2>
+                    <p class="slide-subtitle">Healthy &amp; Durable</p>
+                    <div class="hero-btns">
+                        <a href="products/pre-seasoned-skillet.html" class="btn btn-primary">View Products</a>
+                        <a href="contact.html" class="btn btn-white">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide slide-3">
+                <div class="slide-bg" style="background-image: url('images/hero-banner-3.avif');"></div>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <div class="slide-badge">OEM &amp; ODM Service</div>
+                    <h2 class="slide-title">OEM &amp; ODM</h2>
+                    <ul class="slide-points">
+                        <li>Diversified Products</li>
+                        <li>Speedy Delivery</li>
+                        <li>Low MOQ</li>
+                    </ul>
+                    <div class="hero-btns">
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-scroll-hint">
-            <span>Scroll Down</span>
-            <div class="scroll-arrow"></div>
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators" id="carousel-indicators"></div>
+        <!-- Carousel Arrows -->
+        <button class="carousel-arrow carousel-arrow-left" id="carousel-prev" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15,18 9,12 15,6"></polyline></svg>
+        </button>
+        <button class="carousel-arrow carousel-arrow-right" id="carousel-next" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9,18 15,12 9,6"></polyline></svg>
+        </button>
+    </section>
+
+    <!-- ========== CATEGORY NAVIGATION ========== -->
+    <section class="category-nav">
+        <div class="container">
+            <img src="images/category-nav.avif" alt="Product Categories" class="category-nav-img">
         </div>
     </section>
 
@@ -91,7 +129,7 @@
             <div class="section-header">
                 <div class="section-tag">Featured Products</div>
                 <h2 class="section-title">Our Best Sellers</h2>
-                <p class="section-desc">From classic cast iron to modern enamel -- find the cookware your customers love.</p>
+                <p class="section-desc">From classic cast iron to modern enamel — find the cookware your customers love.</p>
             </div>
             <div class="products-grid" id="featured-products"></div>
             <div style="text-align:center; margin-top: 40px;">
@@ -100,7 +138,19 @@
         </div>
     </section>
 
-    <!-- ========== COMPANY ========== -->
+    <!-- ========== PRODUCTION FLOW ========== -->
+    <section class="section home-process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Production Capability</div>
+                <h2 class="section-title">Cast Iron Customized Solution</h2>
+                <p class="section-desc">From raw material to finished product — complete in-house production</p>
+            </div>
+            <img src="images/production-flow.avif" alt="Production Process" class="production-flow-img">
+        </div>
+    </section>
+
+    <!-- ========== COMPANY OVERVIEW ========== -->
     <section class="section home-company">
         <div class="container">
             <div class="section-header">
@@ -135,50 +185,97 @@
                     </div>
                 </div>
                 <div class="about-img">
-                    <div class="about-img-placeholder">Factory Photo</div>
+                    <img src="images/factory-exterior.jpeg" alt="CookerCool Factory" class="about-img-real" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="about-img-placeholder" style="display:none;">Factory Photo</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== PRODUCTION PROCESS ========== -->
-    <section class="section home-process">
+    <!-- ========== VIDEO SECTION ========== -->
+    <section class="section home-video">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Our Capability</div>
-                <h2 class="section-title">From Raw Material to Finished Product</h2>
-                <p class="section-desc">Complete in-house production ensures quality control at every step.</p>
+                <div class="section-tag">See Us in Action</div>
+                <h2 class="section-title">Production &amp; Products</h2>
             </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-num">1</div>
-                    <h4>Mould Making</h4>
-                    <p>Precision pattern and mould production for accurate casting shapes</p>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video src="videos/company-intro.mp4" controls poster="images/factory-exterior.jpeg"></video>
+                    </div>
+                    <div class="video-caption">Company Introduction</div>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">2</div>
-                    <h4>Casting</h4>
-                    <p>Advanced Disa production line for smooth, refined surfaces</p>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video src="videos/production-process.mp4" controls poster="images/factory-seasoning.jpeg"></video>
+                    </div>
+                    <div class="video-caption">Production Process</div>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">3</div>
-                    <h4>Polishing</h4>
-                    <p>Both manual and mechanical polishing for perfect finish</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="section home-why">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Why CookerCool</div>
+                <h2 class="section-title">Why Partners Choose Us</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🏭</div>
+                    <h3>15+ Years Experience</h3>
+                    <p>Specialized in cast iron and stainless steel cookware manufacturing. We know materials, processes, and quality standards inside out.</p>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">4</div>
-                    <h4>Enameling</h4>
-                    <p>Food-grade enamel coating in various colors</p>
+                <div class="why-card">
+                    <div class="why-icon">✅</div>
+                    <h3>Strict Quality Control</h3>
+                    <p>Every piece is inspected for weight, dimension, surface quality, and cooking performance. Material test reports available.</p>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">5</div>
-                    <h4>Quality Check</h4>
-                    <p>Strict inspection for dimension, weight, and surface quality</p>
+                <div class="why-card">
+                    <div class="why-icon">🎨</div>
+                    <h3>Full Customization</h3>
+                    <p>Logo engraving, custom colors, branded packaging, and product design. We handle everything from concept to delivery.</p>
                 </div>
-                <div class="process-step">
-                    <div class="process-num">6</div>
-                    <h4>Packing &amp; Shipping</h4>
-                    <p>Export-standard packing with global logistics partners</p>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Direct factory pricing with flexible MOQ. Cost-effective solutions without compromising quality.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🚢</div>
+                    <h3>Reliable Global Shipping</h3>
+                    <p>We handle export documentation, packing, and shipping. Trusted by partners in 40+ countries worldwide.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💬</div>
+                    <h3>Fast &amp; Responsive</h3>
+                    <p>We respond to inquiries within 24 hours. Dedicated account manager for smooth communication throughout your order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUST SECTION ========== -->
+    <section class="section home-trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-left">
+                    <div class="section-header" style="text-align:left; margin-bottom: 24px;">
+                        <div class="section-tag">Certifications</div>
+                        <h2 class="section-title">Trusted by Standards</h2>
+                        <p class="section-desc" style="margin:0;">All products meet international quality and safety standards.</p>
+                    </div>
+                    <img src="images/certifications.jpeg" alt="Certifications" class="trust-cert-img">
+                </div>
+                <div class="trust-right">
+                    <div class="section-header" style="text-align:left; margin-bottom: 24px;">
+                        <div class="section-tag">Global Partners</div>
+                        <h2 class="section-title">Be Trusted on a Global Scale</h2>
+                    </div>
+                    <img src="images/partners-logos.jpeg" alt="Partner Brands" class="trust-partner-img">
                 </div>
             </div>
         </div>
@@ -200,7 +297,7 @@
                 <div>
                     <a href="index.html" class="footer-logo">
                         <img src="images/COOKERCOOL.png" alt="CookerCool" class="footer-logo-img">
-                        <span class="footer-logo-text">Cookercool</span>
+                        <span class="footer-logo-text">CookerCool</span>
                     </a>
                     <p class="footer-desc">Professional manufacturer of pre-seasoned cast iron and enamel cookware. OEM &amp; ODM partner for global brands and retailers.</p>
                 </div>
