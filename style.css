@@ -921,3 +921,125 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .hero-carousel { height: 40vh; min-height: 280px; max-height: 350px; }
     .factory-strip-grid { grid-template-columns: 1fr 1fr; }
 }
+/* Video Section Block - white background, stacked layout */
+.video-section-block {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.video-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Split layout: video left, graphic right */
+.video-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.video-split-left { position: relative; }
+
+.video-thumb-wrap {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: var(--navy);
+}
+
+.video-thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-thumb-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,42,74,0.35);
+}
+
+.video-thumb-label {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.video-play-btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-play-btn-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.video-elm {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius);
+}
+
+/* Right side: production flow graphic */
+.video-split-graphic {
+    width: 100%;
+    border-radius: var(--radius);
+    display: block;
+}
+
+/* Full-width layout for company video */
+.video-full-layout { position: relative; }
+
+.video-full-wrap {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: var(--navy);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .video-split-layout { grid-template-columns: 1fr; }
+    .video-split-graphic { display: none; }
+}
+
+@media (max-width: 768px) {
+    .video-section-block { padding: 60px 0; }
+    .video-play-btn { width: 52px; height: 52px; }
+    .video-play-btn-lg { width: 64px; height: 64px; }
+}

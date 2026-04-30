@@ -91,25 +91,27 @@
         </div>
     </section>
 
-    <!-- ========== VIDEO SECTION (moved above products) ========== -->
-    <section class="section home-video">
+    <!-- ========== VIDEO SECTION 1: PRODUCTION PROCESS ========== -->
+    <section class="video-section-block" id="video-production">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">See Our Factory</div>
-                <h2 class="section-title">Production &amp; Products</h2>
+            <div class="video-section-header">
+                <div class="section-tag">Production Capability</div>
+                <h2 class="section-title">Cast Iron Customized Solution</h2>
             </div>
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video src="videos/production-process.mp4" controls poster="images/factory-seasoning.jpeg"></video>
+            <div class="video-split-layout">
+                <div class="video-split-left">
+                    <div class="video-thumb-wrap">
+                        <img src="images/factory-qc-warehouse.jpeg" alt="Production Process" class="video-thumb-img">
+                        <div class="video-thumb-overlay"></div>
+                        <button class="video-play-btn" onclick="playVideo('vp')" aria-label="Play Video">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg>
+                        </button>
+                        <div class="video-thumb-label">Production Process</div>
                     </div>
-                    <div class="video-caption">Production Process</div>
+                    <video class="video-elm" id="vp" src="videos/production-process.mp4" controls preload="metadata"></video>
                 </div>
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video src="videos/company-intro.mp4" controls poster="images/factory-exterior.jpeg"></video>
-                    </div>
-                    <div class="video-caption">Company Introduction</div>
+                <div class="video-split-right">
+                    <img src="images/production-flow.avif" alt="Production Flow" class="video-split-graphic">
                 </div>
             </div>
         </div>
@@ -130,15 +132,24 @@
         </div>
     </section>
 
-    <!-- ========== PRODUCTION FLOW ========== -->
-    <section class="section home-process">
+    <!-- ========== VIDEO SECTION 2: COMPANY INTRODUCTION ========== -->
+    <section class="video-section-block" id="video-company">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Production Capability</div>
-                <h2 class="section-title">Cast Iron Customized Solution</h2>
-                <p class="section-desc">From raw material to finished product — complete in-house production</p>
+            <div class="video-section-header">
+                <div class="section-tag">About CookerCool</div>
+                <h2 class="section-title">Your Trusted Cookware Partner</h2>
             </div>
-            <img src="images/production-flow.avif" alt="Production Process" class="production-flow-img">
+            <div class="video-full-layout">
+                <div class="video-full-wrap">
+                    <img src="images/factory-exterior.jpeg" alt="Company Introduction" class="video-thumb-img">
+                    <div class="video-thumb-overlay"></div>
+                    <button class="video-play-btn video-play-btn-lg" onclick="playVideo('vc')" aria-label="Play Video">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"></polygon></svg>
+                    </button>
+                    <div class="video-thumb-label">Company Introduction</div>
+                </div>
+                <video class="video-elm" id="vc" src="videos/company-intro.mp4" controls preload="metadata"></video>
+            </div>
         </div>
     </section>
 
@@ -146,8 +157,8 @@
     <section class="section home-company">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">About Us</div>
-                <h2 class="section-title">Your Trusted Cookware Partner</h2>
+                <div class="section-tag">Why CookerCool</div>
+                <h2 class="section-title">Our Core Advantages</h2>
             </div>
             <div class="company-grid">
                 <div class="company-text">
@@ -188,8 +199,8 @@
     <section class="section home-why">
         <div class="container">
             <div class="section-header">
-                <div class="section-tag">Why CookerCool</div>
-                <h2 class="section-title">Why Partners Choose Us</h2>
+                <div class="section-tag">Why Partners Choose Us</div>
+                <h2 class="section-title">Why CookerCool</h2>
             </div>
             <div class="why-grid">
                 <div class="why-card">
@@ -335,5 +346,14 @@
     <a href="contact.html" class="fixed-cta">Get a Quote</a>
 
     <script src="script.js"></script>
+    <script>
+    function playVideo(id) {
+        var v = document.getElementById(id);
+        var wrap = v.previousElementSibling;
+        if (wrap) wrap.style.display = 'none';
+        v.style.display = 'block';
+        v.play();
+    }
+    </script>
 </body>
 </html>
