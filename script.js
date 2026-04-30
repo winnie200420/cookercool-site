@@ -15,7 +15,6 @@ function initCarousel() {
     if (current < 0) current = 0;
     let timer = null;
 
-    // Build indicators
     Array.from(slides).forEach((_, i) => {
         const btn = document.createElement('button');
         btn.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -34,29 +33,27 @@ function initCarousel() {
 
     function next() { goTo(current + 1); }
     function prev() { goTo(current - 1); }
-
     function startTimer() { timer = setInterval(next, 5000); }
     function stopTimer() { clearInterval(timer); }
 
     prevBtn && prevBtn.addEventListener('click', () => { stopTimer(); prev(); startTimer(); });
     nextBtn && nextBtn.addEventListener('click', () => { stopTimer(); next(); startTimer(); });
-
     track.addEventListener('mouseenter', stopTimer);
     track.addEventListener('mouseleave', startTimer);
 
     startTimer();
 }
 
-// ----- Featured Products -----
+// ----- Featured Products (English only) -----
 const featuredProducts = [
-    { title_en: "Cast Iron Enamel Set", title_zh: "5件套珐琅锅", sku: "Enamel Cast Iron", size: "Customizable", tag: "Best Seller", cat: "enamel-sets", image: "products/product-enamel-set-red-5pcs.jpeg" },
-    { title_en: "Granite Cookware Set", title_zh: "6件套石纹不粘锅", sku: "Ceramic Nonstick", size: "Customizable", tag: "Popular", cat: "other-cookwares", image: "products/product-granite-set-6pcs.jpeg" },
-    { title_en: "Cast Iron Skillet Set", title_zh: "3件套铸铁煎锅", sku: "Pre-seasoned Cast Iron", size: "26cm", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "products/product-cast-iron-skillet-3pcs.jpeg" },
-    { title_en: "Enamel Dutch Oven Set", title_zh: "6件套珐琅荷兰锅", sku: "Enamel Cast Iron", size: "Customizable", tag: "Popular", cat: "enamel-sets", image: "products/product-red-enamel-set-6pcs.jpeg" },
-    { title_en: "Aluminum Cookware Set", title_zh: "10件铝合金套装", sku: "Die-Cast Aluminum", size: "Customizable", tag: "", cat: "other-cookwares", image: "products/product-aluminum-set-black-10pcs.jpeg" },
-    { title_en: "Teal Enamel Set", title_zh: "5件套青绿珐琅锅", sku: "Enamel Cast Iron", size: "Customizable", tag: "", cat: "enamel-sets", image: "products/product-teal-enamel-set-5pcs.jpeg" },
-    { title_en: "Gray Enamel Set", title_zh: "7件套灰色珐琅锅", sku: "Enamel Cast Iron", size: "Customizable", tag: "", cat: "enamel-sets", image: "products/product-gray-enamel-set-7pcs.jpeg" },
-    { title_en: "Olive Green Cookware Set", title_zh: "橄榄绿铝合金套装", sku: "Die-Cast Aluminum", size: "Customizable", tag: "", cat: "other-cookwares", image: "products/product-aluminum-olive-set.jpeg" },
+    { title_en: "Cast Iron Enamel Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "Best Seller", cat: "enamel-sets", image: "products/product-enamel-set-red-5pcs.jpeg" },
+    { title_en: "Granite Cookware Set", title_zh: "", sku: "Ceramic Nonstick", size: "Customizable", tag: "Popular", cat: "other-cookwares", image: "products/product-granite-set-6pcs.jpeg" },
+    { title_en: "Cast Iron Skillet Set", title_zh: "", sku: "Pre-seasoned Cast Iron", size: "26cm", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "products/product-cast-iron-skillet-3pcs.jpeg" },
+    { title_en: "Enamel Dutch Oven Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "Popular", cat: "enamel-sets", image: "products/product-red-enamel-set-6pcs.jpeg" },
+    { title_en: "Aluminum Cookware Set", title_zh: "", sku: "Die-Cast Aluminum", size: "Customizable", tag: "", cat: "other-cookwares", image: "products/product-aluminum-set-black-10pcs.jpeg" },
+    { title_en: "Teal Enamel Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "", cat: "enamel-sets", image: "products/product-teal-enamel-set-5pcs.jpeg" },
+    { title_en: "Gray Enamel Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "", cat: "enamel-sets", image: "products/product-gray-enamel-set-7pcs.jpeg" },
+    { title_en: "Cast Iron Griddle", title_zh: "", sku: "Pre-seasoned Cast Iron", size: "Customizable", tag: "", cat: "pre-seasoned-skillet", image: "products/product-cast-iron-griddle.jpeg" },
 ];
 
 function renderFeaturedProducts() {
@@ -66,14 +63,13 @@ function renderFeaturedProducts() {
     grid.innerHTML = featuredProducts.map(p => {
         const tagHtml = p.tag ? '<span class="product-tag">' + p.tag + '</span>' : '';
         const imgSrc = 'images/' + p.image;
-        const imgHtml = '<img src="' + imgSrc + '" alt="' + p.title_en + '" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">';
         return '<div class="product-card">' +
-            '<div class="product-img">' + imgHtml +
+            '<div class="product-img">' +
+            '<img src="' + imgSrc + '" alt="' + p.title_en + '" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'inline\';">' +
             '<span class="emoji" style="display:none;">&#9632;</span>' + tagHtml + '</div>' +
             '<div class="product-body">' +
             '<h3 class="product-title">' + p.title_en + '</h3>' +
-            '<p class="product-title-zh">' + p.title_zh + '</p>' +
-            '<p class="product-size">Size: ' + p.size + '</p></div></div>';
+            '<p class="product-size">' + p.sku + ' &nbsp;|&nbsp; ' + p.size + '</p></div></div>';
     }).join('');
 }
 
@@ -140,14 +136,3 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
     renderFeaturedProducts();
 });
-
-function playSliceVideo(id) {
-    var v = document.getElementById(id);
-    var wrap = v.closest('.slice-video-wrap');
-    var img = wrap.querySelector('.slice-full-img');
-    var btn = wrap.querySelector('.slice-play-btn');
-    if (img) img.style.display = 'none';
-    if (btn) btn.style.display = 'none';
-    v.style.display = 'block';
-    v.play();
-}

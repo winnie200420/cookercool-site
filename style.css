@@ -1185,3 +1185,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .video-split-right { padding: 28px 24px; }
     .video-split-title { font-size: 18px; }
 }
+/* Split right image */
+.split-right-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
