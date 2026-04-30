@@ -75,9 +75,7 @@
                 <div class="slide-overlay"></div>
             </div>
         </div>
-        <!-- Carousel Indicators -->
         <div class="carousel-indicators" id="carousel-indicators"></div>
-        <!-- Carousel Arrows -->
         <button class="carousel-arrow carousel-arrow-left" id="carousel-prev" aria-label="Previous">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15,18 9,12 15,6"></polyline></svg>
         </button>
@@ -90,6 +88,30 @@
     <section class="category-nav">
         <div class="container">
             <img src="images/category-nav.avif" alt="Product Categories" class="category-nav-img">
+        </div>
+    </section>
+
+    <!-- ========== VIDEO SECTION (moved above products) ========== -->
+    <section class="section home-video">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">See Our Factory</div>
+                <h2 class="section-title">Production &amp; Products</h2>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video src="videos/production-process.mp4" controls poster="images/factory-seasoning.jpeg"></video>
+                    </div>
+                    <div class="video-caption">Production Process</div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video src="videos/company-intro.mp4" controls poster="images/factory-exterior.jpeg"></video>
+                    </div>
+                    <div class="video-caption">Company Introduction</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -162,30 +184,6 @@
         </div>
     </section>
 
-    <!-- ========== VIDEO SECTION ========== -->
-    <section class="section home-video">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">See Us in Action</div>
-                <h2 class="section-title">Production &amp; Products</h2>
-            </div>
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video src="videos/company-intro.mp4" controls poster="images/factory-exterior.jpeg"></video>
-                    </div>
-                    <div class="video-caption">Company Introduction</div>
-                </div>
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video src="videos/production-process.mp4" controls poster="images/factory-seasoning.jpeg"></video>
-                    </div>
-                    <div class="video-caption">Production Process</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== WHY CHOOSE US ========== -->
     <section class="section home-why">
         <div class="container">
@@ -228,10 +226,40 @@
         </div>
     </section>
 
+    <!-- ========== FACTORY IMAGES STRIP ========== -->
+    <section class="section home-factory-strip">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">Factory &amp; Team</div>
+                <h2 class="section-title">Behind Every Product</h2>
+            </div>
+            <div class="factory-strip-grid">
+                <div class="factory-strip-item">
+                    <img src="images/factory-exterior.jpeg" alt="Factory Exterior" onerror="this.style.display='none'">
+                </div>
+                <div class="factory-strip-item">
+                    <img src="images/factory-interior-roof.jpeg" alt="Factory Interior" onerror="this.style.display='none'">
+                </div>
+                <div class="factory-strip-item">
+                    <img src="images/factory-seasoning.jpeg" alt="Production Line" onerror="this.style.display='none'">
+                </div>
+                <div class="factory-strip-item">
+                    <img src="images/factory-warehouse.jpeg" alt="Warehouse" onerror="this.style.display='none'">
+                </div>
+                <div class="factory-strip-item">
+                    <img src="images/products/product-showroom.jpeg" alt="Showroom" onerror="this.style.display='none'">
+                </div>
+                <div class="factory-strip-item">
+                    <img src="images/products/product-office-team.jpeg" alt="Team" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== TRUST SECTION ========== -->
     <section class="section home-trust">
         <div class="container">
-            <div class="trust-cert-section">
+            <div class="trust-section-block">
                 <div class="section-header">
                     <div class="section-tag">Certifications</div>
                     <h2 class="section-title">Trusted by Standards</h2>
@@ -239,7 +267,8 @@
                 </div>
                 <img src="images/certifications.jpeg" alt="Certifications" class="trust-full-img">
             </div>
-            <div class="trust-partner-section" style="margin-top: 64px;">
+
+            <div class="trust-section-block">
                 <div class="section-header">
                     <div class="section-tag">Global Partners</div>
                     <h2 class="section-title">Be Trusted on a Global Scale</h2>
