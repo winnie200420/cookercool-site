@@ -140,3 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
     renderFeaturedProducts();
 });
+
+function playSliceVideo(id) {
+    var v = document.getElementById(id);
+    var wrap = v.closest('.slice-video-wrap');
+    var img = wrap.querySelector('.slice-full-img');
+    var btn = wrap.querySelector('.slice-play-btn');
+    if (img) img.style.display = 'none';
+    if (btn) btn.style.display = 'none';
+    v.style.display = 'block';
+    v.play();
+}

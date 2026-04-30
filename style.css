@@ -1054,3 +1054,38 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     height: auto;
     display: block;
 }
+/* Slice video wrap */
+.slice-video-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.slice-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.slice-play-btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.slice-video-elm {
+    display: none;
+    width: 100%;
+}
