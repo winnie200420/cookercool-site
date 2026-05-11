@@ -47,10 +47,10 @@ function initCarousel() {
 // ----- Featured Products (English only) -----
 const featuredProducts = [
     { title_en: "Cast Iron Enamel Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "Best Seller", cat: "enamel-sets", image: "products/product-enamel-set-red-5pcs.jpeg" },
-    { title_en: "Granite Cookware Set", title_zh: "", sku: "Ceramic Nonstick", size: "Customizable", tag: "Popular", cat: "other-cookwares", image: "products/product-granite-set-6pcs.jpeg" },
+    { title_en: "Carbon Steel Wok", title_zh: "", sku: "Carbon Steel", size: "32cm", tag: "Popular", cat: "other-cookwares", image: "products/product-carbon-steel-wok.jpeg" },
     { title_en: "Cast Iron Skillet Set", title_zh: "", sku: "Pre-seasoned Cast Iron", size: "26cm", tag: "Best Seller", cat: "pre-seasoned-skillet", image: "products/product-cast-iron-skillet-3pcs.jpeg" },
     { title_en: "Enamel Dutch Oven Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "Popular", cat: "enamel-sets", image: "products/product-red-enamel-set-6pcs.jpeg" },
-    { title_en: "Aluminum Cookware Set", title_zh: "", sku: "Die-Cast Aluminum", size: "Customizable", tag: "", cat: "other-cookwares", image: "products/product-aluminum-set-black-10pcs.jpeg" },
+    { title_en: "Stainless Steel Fry Pan", title_zh: "", sku: "Stainless Steel", size: "26cm", tag: "Best Seller", cat: "other-cookwares", image: "products/product-stainless-steel-fry-pan.jpeg" },
     { title_en: "Teal Enamel Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "", cat: "enamel-sets", image: "products/product-teal-enamel-set-5pcs.jpeg" },
     { title_en: "Gray Enamel Set", title_zh: "", sku: "Enamel Cast Iron", size: "Customizable", tag: "", cat: "enamel-sets", image: "products/product-gray-enamel-set-7pcs.jpeg" },
     { title_en: "Cast Iron Griddle", title_zh: "", sku: "Pre-seasoned Cast Iron", size: "Customizable", tag: "", cat: "pre-seasoned-skillet", image: "products/product-cast-iron-griddle.jpeg" },
